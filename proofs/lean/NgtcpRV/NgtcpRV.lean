@@ -50,6 +50,7 @@ import NgtcpRV.StreamOffset
 import NgtcpRV.ConnEcn
 import NgtcpRV.ConnPtoBackoff
 import NgtcpRV.ConnIdleTimeout
+import NgtcpRV.ConnRetirePriorTo
 import NgtcpRV.DcidtrVerify
 import NgtcpRV.RingBuf
 import NgtcpRV.RangeAlg
