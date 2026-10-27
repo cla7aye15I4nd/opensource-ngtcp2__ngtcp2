@@ -430,11 +430,11 @@ int version_negotiation(ngtcp2_conn *conn, uint32_t version,
   ngtcp2_crypto_aead_ctx aead_ctx{};
   ngtcp2_crypto_cipher_ctx hp_ctx{};
 
-  ngtcp2_conn_install_vneg_initial_key(conn, version, &aead_ctx, null_iv,
-                                       &hp_ctx, &aead_ctx, null_iv, &hp_ctx,
-                                       sizeof(null_iv));
+  auto rv = ngtcp2_conn_install_vneg_initial_key(
+    conn, version, &aead_ctx, null_iv, &hp_ctx, &aead_ctx, null_iv, &hp_ctx,
+    sizeof(null_iv));
 
-  return 0;
+  return rv == 0 ? 0 : NGTCP2_ERR_CALLBACK_FAILURE;
 }
 } // namespace
 
