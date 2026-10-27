@@ -90,6 +90,14 @@ void test_ngtcp2_addr_eq(void) {
 
     assert_true(ngtcp2_addr_eq(&a, &b));
 
+    saa.sin6_scope_id = 1;
+
+    assert_false(ngtcp2_addr_eq(&a, &b));
+
+    sab.sin6_scope_id = 1;
+
+    assert_true(ngtcp2_addr_eq(&a, &b));
+
     saa.sin6_port = 99;
 
     assert_false(ngtcp2_addr_eq(&a, &b));
@@ -165,6 +173,14 @@ void test_ngtcp2_addr_cmp(void) {
 
     ngtcp2_addr_init(&a, (const ngtcp2_sockaddr *)&saa, sizeof(saa));
     ngtcp2_addr_init(&b, (const ngtcp2_sockaddr *)&sab, sizeof(sab));
+
+    assert_uint32(NGTCP2_ADDR_CMP_FLAG_NONE, ==, ngtcp2_addr_cmp(&a, &b));
+
+    saa.sin6_scope_id = 1;
+
+    assert_uint32(NGTCP2_ADDR_CMP_FLAG_ADDR, ==, ngtcp2_addr_cmp(&a, &b));
+
+    sab.sin6_scope_id = 1;
 
     assert_uint32(NGTCP2_ADDR_CMP_FLAG_NONE, ==, ngtcp2_addr_cmp(&a, &b));
 
