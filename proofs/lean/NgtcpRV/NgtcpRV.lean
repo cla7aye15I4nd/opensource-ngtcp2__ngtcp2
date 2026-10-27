@@ -88,6 +88,7 @@ import NgtcpRV.ConnPmtud
 import NgtcpRV.ConnMinMax
 import NgtcpRV.ConnKeepAlive
 import NgtcpRV.ConnBuf
+import NgtcpRV.ConnCidRetire
 import NgtcpRV.DcidtrVerify
 import NgtcpRV.RingBuf
 import NgtcpRV.RangeAlg
