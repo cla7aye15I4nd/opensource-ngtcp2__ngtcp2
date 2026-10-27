@@ -123,6 +123,7 @@ import NgtcpRV.ConnPersistentCong
 import NgtcpRV.ConnHandshakeDone
 import NgtcpRV.ConnAcktrBound
 import NgtcpRV.ConnStrmAcked
+import NgtcpRV.ConnTimerNot
 import NgtcpRV.DcidtrVerify
 import NgtcpRV.RingBuf
 import NgtcpRV.RangeAlg
