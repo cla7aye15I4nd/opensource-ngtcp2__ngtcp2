@@ -54,6 +54,37 @@ verified surface.
   `cubic_cc_on_ack_recv`) exceed CBMC's practical solve budget as whole units;
   their bounds-checking primitives / risky arithmetic are proved or hand-audited.
 
+## Deductive layer: loops & data-structure invariants (Lean 4, `proofs/lean/`)
+
+CBMC unrolls loops to a fixed bound and steps machine code a fixed number of
+instructions; neither can cover *all* input sizes. For the loop and
+data-structure code at the boundary above, `proofs/lean/NgtcpRV/` carries
+kernel-checked Lean proofs that quantify over every size, each audited with
+`#print axioms` to depend only on `[propext, Quot.sound]`:
+
+- **`VecLenVarint`** — `ngtcp2_vec_len_varint` is a *sound and complete* overflow
+  detector: returns the exact sum when it fits in a varint, `-1` iff the true
+  (unbounded) sum would exceed `MAX`, for every `n`. By induction on the list.
+- **`KslSearch`** — the `ngtcp2_ksl_search_def` within-block scan returns the
+  correct lower-bound index for **every** block size (CBMC covered only n=32):
+  index ≤ `blk->n` (read-safety), all scanned keys satisfy the comparator, the
+  stop key fails it.
+- **`RingBuf`** — the power-of-two ringbuf (`cap = mask+1`, slots via `& mask`):
+  every computed slot is `< cap` (get/push in bounds), and `seq_inv` proves by
+  induction that **any** sequence of push/pop operations preserves `len ≤ cap` —
+  the buffer can never overflow, for any operation history.
+- **`RangeAlg`** — `ngtcp2_range_{intersect,cut,len}` semantically: a non-empty
+  `intersect(q,k)` is a sub-range of `k`, and cutting `k` by it tiles `k`
+  exactly (`len l + len m + len r = len k`, pieces well-formed and ordered).
+  This is the invariant `gaptr`/`rob`/`acktr` rely on when splitting a gap.
+
+`RangeAlg` + `RingBuf` + `KslSearch` are the primitives beneath
+`gaptr`/`rob`/`acktr`; proving their invariants is the groundwork for the
+stateful modules listed above. Also in `proofs/lean/`: RISC-V machine-code
+proofs (`AdjustPktNum`, `RangeInit`, `RangeIntersect`, `PutUvarint`, …) that
+verify the *compiled* object code of leaf functions — strictly stronger than a
+C-level proof, since they assume nothing about the compiler.
+
 ## Techniques (see commit history)
 
 - External CaDiCaL for SAT (the built-in `--sat-solver cadical` is unavailable
