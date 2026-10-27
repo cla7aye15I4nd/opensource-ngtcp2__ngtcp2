@@ -1,0 +1,10 @@
+name = "NgtcpRV"
+version = "0.1.0"
+defaultTargets = ["NgtcpRV"]
+
+[[lean_lib]]
+name = "NgtcpRV"
+
+[[require]]
+name = "RISCV"
+path = "../riscv-lean"
