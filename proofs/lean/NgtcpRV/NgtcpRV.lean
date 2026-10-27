@@ -18,6 +18,7 @@ import NgtcpRV.KslSplit
 import NgtcpRV.BallocGet
 import NgtcpRV.ObjallocGet
 import NgtcpRV.ConnFlowControl
+import NgtcpRV.ConnPkt
 import NgtcpRV.RingBuf
 import NgtcpRV.RangeAlg
 import NgtcpRV.GaptrPush
