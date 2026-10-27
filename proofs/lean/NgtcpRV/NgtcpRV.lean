@@ -34,6 +34,7 @@ import NgtcpRV.ConnAcktrMax
 import NgtcpRV.ConnRatelim
 import NgtcpRV.ConnStrmRecv
 import NgtcpRV.ConnStreamLimit
+import NgtcpRV.ConnAmplification
 import NgtcpRV.DcidtrVerify
 import NgtcpRV.RingBuf
 import NgtcpRV.RangeAlg
