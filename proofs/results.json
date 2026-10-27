@@ -1728,5 +1728,59 @@
    "tail": ""
   },
   "verdict": "PROVED"
+ },
+ "pv_validate_safe": {
+  "lemma": {
+   "name": "pv_validate_safe",
+   "src": [
+    "ngtcp2_ringbuf.c",
+    "ngtcp2_str.c",
+    "ngtcp2_mem.c"
+   ],
+   "unwind": 9,
+   "timeout": 600
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 0.37,
+   "failures": [],
+   "obligations": 1166,
+   "tail": ""
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 0.38,
+   "failures": [],
+   "obligations": 1166,
+   "tail": ""
+  },
+  "verdict": "PROVED"
+ },
+ "pv_funcs_safe": {
+  "lemma": {
+   "name": "pv_funcs_safe",
+   "src": [
+    "ngtcp2_ringbuf.c",
+    "ngtcp2_str.c",
+    "ngtcp2_mem.c"
+   ],
+   "unwind": 9,
+   "timeout": 600
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 0.48,
+   "failures": [],
+   "obligations": 1165,
+   "tail": ""
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 0.62,
+   "failures": [],
+   "obligations": 1165,
+   "tail": ""
+  },
+  "verdict": "PROVED"
  }
 }

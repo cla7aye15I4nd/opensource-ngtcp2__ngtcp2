@@ -1155,5 +1155,25 @@
   ],
   "unwind": 4,
   "timeout": 1000
+ },
+ {
+  "name": "pv_validate_safe",
+  "src": [
+   "ngtcp2_ringbuf.c",
+   "ngtcp2_str.c",
+   "ngtcp2_mem.c"
+  ],
+  "unwind": 9,
+  "timeout": 600
+ },
+ {
+  "name": "pv_funcs_safe",
+  "src": [
+   "ngtcp2_ringbuf.c",
+   "ngtcp2_str.c",
+   "ngtcp2_mem.c"
+  ],
+  "unwind": 9,
+  "timeout": 600
  }
 ]
