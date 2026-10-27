@@ -2017,5 +2017,60 @@
    "tail": ""
   },
   "verdict": "INCOMPLETE"
+ },
+ "ksl_insert_safe": {
+  "lemma": {
+   "name": "ksl_insert_safe",
+   "src": [
+    "ngtcp2_ksl.c",
+    "ngtcp2_objalloc.c",
+    "ngtcp2_balloc.c",
+    "ngtcp2_mem.c"
+   ],
+   "unwind": 4,
+   "timeout": 900
+  },
+  "sat": {
+   "status": "OOM",
+   "secs": 9.55,
+   "failures": [],
+   "obligations": 0,
+   "tail": "           * function: \n                * working_directory: /home/moe/ngtcp2/src/proofs\n              * identifier: tag-ngtcp2_ksl_node\n              * #typedef: ngtcp2_ksl_node\n  0: signedbv\n      * width: 8\n      * #c_type: char\n<< END EXTRA DIAGNOSTICS >>\n\n--- end invariant violation report ---\n"
+  },
+  "z3": {
+   "status": "OOM",
+   "secs": 9.55,
+   "failures": [],
+   "obligations": 0,
+   "tail": "           * function: \n                * working_directory: /home/moe/ngtcp2/src/proofs\n              * identifier: tag-ngtcp2_ksl_node\n              * #typedef: ngtcp2_ksl_node\n  0: signedbv\n      * width: 8\n      * #c_type: char\n<< END EXTRA DIAGNOSTICS >>\n\n--- end invariant violation report ---\n"
+  },
+  "verdict": "OOM"
+ },
+ "crypto_km_new_safe": {
+  "lemma": {
+   "name": "crypto_km_new_safe",
+   "src": [
+    "ngtcp2_crypto.c",
+    "ngtcp2_mem.c",
+    "ngtcp2_str.c"
+   ],
+   "unwind": 3,
+   "timeout": 600
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 0.75,
+   "failures": [],
+   "obligations": 1039,
+   "tail": ""
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 2.91,
+   "failures": [],
+   "obligations": 1039,
+   "tail": ""
+  },
+  "verdict": "PROVED"
  }
 }

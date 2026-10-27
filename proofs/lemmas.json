@@ -1204,5 +1204,15 @@
   ],
   "unwind": 2,
   "timeout": 300
+ },
+ {
+  "name": "crypto_km_new_safe",
+  "src": [
+   "ngtcp2_crypto.c",
+   "ngtcp2_mem.c",
+   "ngtcp2_str.c"
+  ],
+  "unwind": 3,
+  "timeout": 600
  }
 ]
