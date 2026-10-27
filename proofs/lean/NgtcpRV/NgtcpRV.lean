@@ -105,6 +105,7 @@ import NgtcpRV.ConnVersion
 import NgtcpRV.ConnDupDetect
 import NgtcpRV.ConnPtoBound
 import NgtcpRV.ConnKeyUpdateGuard
+import NgtcpRV.ConnTimer
 import NgtcpRV.DcidtrVerify
 import NgtcpRV.RingBuf
 import NgtcpRV.RangeAlg
