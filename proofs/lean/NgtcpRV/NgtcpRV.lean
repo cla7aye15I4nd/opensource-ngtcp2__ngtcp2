@@ -154,3 +154,4 @@ import NgtcpRV.FrameVarlenSafe
 import NgtcpRV.StreamDecodeSafe
 import NgtcpRV.TransportParamPrefAddr
 import NgtcpRV.KeyUpdateSM
+import NgtcpRV.DcidRecvSM
