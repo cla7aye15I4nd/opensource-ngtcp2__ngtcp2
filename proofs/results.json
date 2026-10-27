@@ -2154,5 +2154,35 @@
    "tail": ""
   },
   "verdict": "PROVED"
+ },
+ "frame_chain_new_safe": {
+  "lemma": {
+   "name": "frame_chain_new_safe",
+   "src": [
+    "ngtcp2_frame_chain.c",
+    "ngtcp2_objalloc.c",
+    "ngtcp2_balloc.c",
+    "ngtcp2_opl.c",
+    "ngtcp2_buf.c",
+    "ngtcp2_mem.c"
+   ],
+   "unwind": 3,
+   "timeout": 700
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 0.79,
+   "failures": [],
+   "obligations": 648,
+   "tail": ""
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 1.08,
+   "failures": [],
+   "obligations": 648,
+   "tail": ""
+  },
+  "verdict": "PROVED"
  }
 }
