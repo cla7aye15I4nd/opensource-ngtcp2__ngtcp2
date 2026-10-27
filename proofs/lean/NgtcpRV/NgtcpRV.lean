@@ -63,6 +63,7 @@ import NgtcpRV.ConnFrameAllow
 import NgtcpRV.ConnAckGap
 import NgtcpRV.ConnStatelessReset
 import NgtcpRV.ConnDatagram
+import NgtcpRV.ConnInFlight
 import NgtcpRV.DcidtrVerify
 import NgtcpRV.RingBuf
 import NgtcpRV.RangeAlg
