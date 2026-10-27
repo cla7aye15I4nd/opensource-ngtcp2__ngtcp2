@@ -119,6 +119,7 @@ import NgtcpRV.ConnClosingPeriod
 import NgtcpRV.ConnAmplificationLift
 import NgtcpRV.ConnKeyPhase
 import NgtcpRV.ConnLossTime
+import NgtcpRV.ConnPersistentCong
 import NgtcpRV.DcidtrVerify
 import NgtcpRV.RingBuf
 import NgtcpRV.RangeAlg
