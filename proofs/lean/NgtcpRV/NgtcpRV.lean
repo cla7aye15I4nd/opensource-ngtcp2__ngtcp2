@@ -39,6 +39,7 @@ import NgtcpRV.ConnStateMachine
 import NgtcpRV.QlogDigits
 import NgtcpRV.CryptoNonce
 import NgtcpRV.CryptoHeaderProt
+import NgtcpRV.CryptoCmemeq
 import NgtcpRV.DcidtrVerify
 import NgtcpRV.RingBuf
 import NgtcpRV.RangeAlg
