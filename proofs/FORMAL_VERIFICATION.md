@@ -84,9 +84,38 @@ kernel-checked Lean proofs that quantify over every size, each audited with
   exactly (`len l + len m + len r = len k`, pieces well-formed and ordered).
   This is the invariant `gaptr`/`rob`/`acktr` rely on when splitting a gap.
 
-`RangeAlg` + `RingBuf` + `KslSearch` are the primitives beneath
-`gaptr`/`rob`/`acktr`; proving their invariants is the groundwork for the
-stateful modules listed above. Also in `proofs/lean/`: RISC-V machine-code
+- **`KslSplit`** — the B-tree node split (`ksl_split_blk`/`ksl_split_node`)
+  memcpy/memmove index arithmetic stays inside the fixed `MAX_NBLK=32`-slot
+  arrays, and a full block splits into two `MIN_NBLK` halves (the two asserts).
+  This is the memory-safety core of the one structure CBMC could not reach.
+
+Built on those primitives, the stateful operations:
+
+- **`GaptrPush`** — `ngtcp2_gaptr_push` set-level correctness: after pushing `q`,
+  the still-unpushed offsets are exactly the previously-unpushed ones minus `q`
+  (induction over the gap list, on top of `RangeAlg`).
+- **`RobWrite`** — `rob_write_data` chunk-buffer `memcpy` is in bounds for every
+  offset/len (the rob `rob_push` gap logic is the same subtraction as `GaptrPush`).
+- **`AcktrArith`** — `acktr_recv_ack`'s attacker-supplied ACK-range `int64`
+  arithmetic has no signed overflow, given the `validate_ack` guards (induction).
+- **`IdtrOpen`** — `ngtcp2_idtr_open` correctness, directly from the gaptr model.
+- **`DcidtrVerify`** — `verify_cid_uniqueness` reports a conflict iff the CID is
+  present; `remove_dcid_at` swap-remove is index-safe.
+
+Allocators and `conn.c` safety helpers:
+
+- **`BallocGet`** / **`ObjallocGet`** — the `balloc` bump advance never overruns
+  the block (safe *because of* 16-alignment, despite an apparent off-by-one), and
+  `objalloc`'s block sizing discharges `balloc_get`'s preconditions (composition).
+- **`ConnFlowControl`** — `conn_enforce_flow_control` keeps `offset ≤ max_offset`
+  (no memory-exhaustion DoS); `dcid_tx_left` keeps `bytes_sent ≤ 3·bytes_recv`
+  (the QUIC anti-amplification limit, no traffic-amplification DoS).
+- **`ConnPkt`** — `conn_shape_udp_payload` never exceeds any negotiated UDP
+  payload max; `pktns_select_pkt_numlen` returns a length that holds the value.
+
+`RangeAlg` + `RingBuf` + `KslSearch` + `KslSplit` are the primitives beneath
+`gaptr`/`rob`/`acktr`/`idtr`/`dcidtr`; proving their invariants is the groundwork
+for the stateful modules above. Also in `proofs/lean/`: RISC-V machine-code
 proofs (`AdjustPktNum`, `RangeInit`, `RangeIntersect`, `PutUvarint`, …) that
 verify the *compiled* object code of leaf functions — strictly stronger than a
 C-level proof, since they assume nothing about the compiler.
