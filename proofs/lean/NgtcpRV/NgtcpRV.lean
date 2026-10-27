@@ -151,3 +151,4 @@ import NgtcpRV.IdtrOpen
 import NgtcpRV.ConnHpLengths
 import NgtcpRV.AckDecodeSafe
 import NgtcpRV.FrameVarlenSafe
+import NgtcpRV.StreamDecodeSafe
