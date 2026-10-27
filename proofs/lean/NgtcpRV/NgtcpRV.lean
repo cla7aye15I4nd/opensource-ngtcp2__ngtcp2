@@ -78,6 +78,7 @@ import NgtcpRV.ConnPktNumUnique
 import NgtcpRV.ConnPktNumSpace
 import NgtcpRV.ConnAckDelay
 import NgtcpRV.ConnMaxStreams
+import NgtcpRV.ConnWindowTune
 import NgtcpRV.DcidtrVerify
 import NgtcpRV.RingBuf
 import NgtcpRV.RangeAlg
