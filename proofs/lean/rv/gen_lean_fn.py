@@ -59,7 +59,7 @@ for addr, word, op, args in lines:
         out.append(f"some (.srliw {r(a[0])} {r(a[1])} {imm(a[2])}#5)")
     elif op == "lui":
         out.append(f"some (.lui {r(a[0])} {imm(a[1]) & 0xfffff}#20)")
-    elif op in ("add", "sub", "sll", "sltu", "xor", "or", "and"):
+    elif op in ("add", "sub", "sll", "sltu", "xor", "or", "and", "srlw"):
         out.append(f"some (.{op} {r(a[0])} {r(a[1])} {r(a[2])})")
     elif op in ("bgeu", "bltu", "beq", "bne", "blt"):
         out.append(f"some (.{op} {r(a[0])} {r(a[1])} {rel(a[2]) & 0x1fff}#13)")

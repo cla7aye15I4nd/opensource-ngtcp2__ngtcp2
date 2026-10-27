@@ -11,3 +11,4 @@ import NgtcpRV.RangeEq
 import NgtcpRV.RangeNotAfter
 import NgtcpRV.VerifyRsv
 import NgtcpRV.VersionPreds
+import NgtcpRV.GetTypeLong

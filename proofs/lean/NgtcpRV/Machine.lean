@@ -30,6 +30,7 @@ inductive Instr where
   | ori  (rd rs1 : Reg) (imm : BitVec 12)
   | lui  (rd : Reg) (imm : BitVec 20)
   | srliw (rd rs1 : Reg) (shamt : BitVec 5)
+  | srlw (rd rs1 rs2 : Reg)
   | lb   (rd rs1 : Reg) (imm : BitVec 12)
   | lbu  (rd rs1 : Reg) (imm : BitVec 12)
   | ld   (rd rs1 : Reg) (imm : BitVec 12)
@@ -110,6 +111,8 @@ def decode (w : BitVec 32) : Option Instr :=
     some (.lui rd (w.extractLsb 31 12))
   else if opcode = 0b0011011#7 ∧ funct3 = 5#3 ∧ funct7 = 0#7 then  -- OP-IMM-32: SRLIW
     some (.srliw rd rs1 (w.extractLsb 24 20))
+  else if opcode = 0b0111011#7 ∧ funct3 = 5#3 ∧ funct7 = 0#7 then  -- OP-32: SRLW
+    some (.srlw rd rs1 rs2)
   else if opcode = 0b0000011#7 then     -- LOAD
     if funct3 = 0#3 then some (.lb rd rs1 immI)
     else if funct3 = 3#3 then some (.ld rd rs1 immI)
@@ -196,6 +199,7 @@ def exec (i : Instr) (s : State) : State :=
   | .ori rd rs1 imm    => (s.wr rd (RV64.ori imm (s.rd rs1))).next
   | .lui rd imm        => (s.wr rd (RV64.lui imm)).next
   | .srliw rd rs1 sh   => (s.wr rd (RV64.srliw sh (s.rd rs1))).next
+  | .srlw rd rs1 rs2   => (s.wr rd (RV64.srlw (s.rd rs2) (s.rd rs1))).next
   | .lb rd rs1 imm     =>
       let a := s.rd rs1 + imm.signExtend 64
       if s.rdok a then (s.wr rd ((s.mem a).signExtend 64)).next else s.faulted

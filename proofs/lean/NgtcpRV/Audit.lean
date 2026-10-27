@@ -25,3 +25,4 @@ open NgtcpRV
 #print axioms verifyRsv_ok
 #print axioms isReserved_ok
 #print axioms isSupported_ok
+#print axioms getTypeLong_ok
