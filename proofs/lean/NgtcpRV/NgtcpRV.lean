@@ -31,6 +31,7 @@ import NgtcpRV.ConnCongestion
 import NgtcpRV.ConnHandshake
 import NgtcpRV.ConnFinalSize
 import NgtcpRV.ConnAcktrMax
+import NgtcpRV.ConnRatelim
 import NgtcpRV.DcidtrVerify
 import NgtcpRV.RingBuf
 import NgtcpRV.RangeAlg
