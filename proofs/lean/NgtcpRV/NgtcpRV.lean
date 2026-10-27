@@ -130,6 +130,7 @@ import NgtcpRV.ConnMaxPktNum
 import NgtcpRV.ConnRetransmittable
 import NgtcpRV.ConnBlocked
 import NgtcpRV.ConnStreamsBlocked
+import NgtcpRV.ConnMigration
 import NgtcpRV.DcidtrVerify
 import NgtcpRV.RingBuf
 import NgtcpRV.RangeAlg
