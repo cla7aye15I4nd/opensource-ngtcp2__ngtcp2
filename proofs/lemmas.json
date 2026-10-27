@@ -1030,5 +1030,17 @@
   "src": [],
   "unwind": 3,
   "timeout": 900
+ },
+ {
+  "name": "cc_reno_events_no_ub",
+  "src": [],
+  "unwind": 3,
+  "timeout": 900
+ },
+ {
+  "name": "cc_cbrt_correct",
+  "src": [],
+  "unwind": 23,
+  "timeout": 900
  }
 ]
