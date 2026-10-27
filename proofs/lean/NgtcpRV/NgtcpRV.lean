@@ -76,6 +76,7 @@ import NgtcpRV.ConnShortHeader
 import NgtcpRV.ConnMaxData
 import NgtcpRV.ConnPktNumUnique
 import NgtcpRV.ConnPktNumSpace
+import NgtcpRV.ConnAckDelay
 import NgtcpRV.DcidtrVerify
 import NgtcpRV.RingBuf
 import NgtcpRV.RangeAlg
