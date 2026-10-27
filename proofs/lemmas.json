@@ -1270,5 +1270,13 @@
   ],
   "unwind": 3,
   "timeout": 500
+ },
+ {
+  "name": "err_safe",
+  "src": [
+   "ngtcp2_err.c"
+  ],
+  "unwind": 2,
+  "timeout": 300
  }
 ]

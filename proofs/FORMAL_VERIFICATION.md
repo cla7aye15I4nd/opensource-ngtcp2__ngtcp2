@@ -79,3 +79,7 @@ CBMC's practical reach even for one insert. This is why `ksl` insert/remove/
 split — and the modules that mutate ksl state (`rob`, `acktr`, `gaptr`, `idtr`)
 — are out of scope for this isolated-harness method. The ksl *read* path
 (within-block search, all comparators) IS proved.
+
+`ngtcp2_pkt_split_vec_rand` is similarly out of reach: the full ngtcp2_pkt.c
+SSA combined with symbolic growing-array indexing OOMs CBMC even with the PCG
+RNG stubbed to its contract. Its building block ngtcp2_vec_split_at is proved.
