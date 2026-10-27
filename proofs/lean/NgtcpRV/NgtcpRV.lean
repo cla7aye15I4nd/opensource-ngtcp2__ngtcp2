@@ -150,3 +150,4 @@ import NgtcpRV.AcktrArith
 import NgtcpRV.IdtrOpen
 import NgtcpRV.ConnHpLengths
 import NgtcpRV.AckDecodeSafe
+import NgtcpRV.FrameVarlenSafe
