@@ -73,6 +73,7 @@ import NgtcpRV.ConnSlowStart
 import NgtcpRV.ConnStreamFrameType
 import NgtcpRV.ConnLongHeader
 import NgtcpRV.ConnShortHeader
+import NgtcpRV.ConnMaxData
 import NgtcpRV.DcidtrVerify
 import NgtcpRV.RingBuf
 import NgtcpRV.RangeAlg
