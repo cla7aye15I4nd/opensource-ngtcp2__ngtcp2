@@ -2318,5 +2318,33 @@
    "tail": ""
   },
   "verdict": "PROVED"
+ },
+ "version_pkttype_safe": {
+  "lemma": {
+   "name": "version_pkttype_safe",
+   "src": [
+    "ngtcp2_version.c",
+    "ngtcp2_pkt.c",
+    "ngtcp2_conv.c",
+    "ngtcp2_str.c"
+   ],
+   "unwind": 3,
+   "timeout": 400
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 0.31,
+   "failures": [],
+   "obligations": 5245,
+   "tail": ""
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 0.32,
+   "failures": [],
+   "obligations": 5245,
+   "tail": ""
+  },
+  "verdict": "PROVED"
  }
 }

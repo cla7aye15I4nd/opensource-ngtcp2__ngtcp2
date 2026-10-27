@@ -1298,5 +1298,16 @@
   ],
   "unwind": 5,
   "timeout": 600
+ },
+ {
+  "name": "version_pkttype_safe",
+  "src": [
+   "ngtcp2_version.c",
+   "ngtcp2_pkt.c",
+   "ngtcp2_conv.c",
+   "ngtcp2_str.c"
+  ],
+  "unwind": 3,
+  "timeout": 400
  }
 ]

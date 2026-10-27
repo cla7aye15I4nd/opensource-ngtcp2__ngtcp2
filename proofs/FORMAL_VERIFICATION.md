@@ -11,7 +11,7 @@ Inspired by the decompose-into-many-small-kernel-checked-lemmas approach:
 `prove.py` runs every entry in `lemmas.json`, each a tiny harness in `harness/`
 linked against the **unmodified** ngtcp2 sources.
 
-## What is proved (105 lemmas, ~28 modules)
+## What is proved (109 lemmas, ~30 modules)
 
 - **Stateless packet codec** — every frame decoder *and* encoder, long/short
   headers, version-negotiation and stateless-reset writers, the varint codec
