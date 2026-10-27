@@ -510,6 +510,8 @@ int ngtcp2_transport_params_decode_versioned(int transport_params_version,
   size_t len;
   uint64_t param_type;
   uint64_t valuelen;
+  uint64_t param_types = 0;
+  uint64_t param_type_mask;
   int rv;
   ngtcp2_sockaddr_in *sa_in;
   ngtcp2_sockaddr_in6 *sa_in6;
@@ -540,6 +542,21 @@ int ngtcp2_transport_params_decode_versioned(int transport_params_version,
     if (decode_varint(&param_type, &p, end) != 0) {
       return NGTCP2_ERR_MALFORMED_TRANSPORT_PARAM;
     }
+
+    if (param_type <= NGTCP2_TRANSPORT_PARAM_VERSION_INFORMATION) {
+      param_type_mask = 1ULL << param_type;
+    } else if (param_type == NGTCP2_TRANSPORT_PARAM_MAX_DATAGRAM_FRAME_SIZE) {
+      param_type_mask = 1ULL << 18;
+    } else if (param_type == NGTCP2_TRANSPORT_PARAM_GREASE_QUIC_BIT) {
+      param_type_mask = 1ULL << 19;
+    } else {
+      param_type_mask = 0;
+    }
+
+    if (param_types & param_type_mask) {
+      return NGTCP2_ERR_MALFORMED_TRANSPORT_PARAM;
+    }
+    param_types |= param_type_mask;
 
     switch (param_type) {
     case NGTCP2_TRANSPORT_PARAM_INITIAL_MAX_STREAM_DATA_BIDI_LOCAL:

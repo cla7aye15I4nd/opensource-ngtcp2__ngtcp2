@@ -609,6 +609,21 @@ void test_ngtcp2_transport_params_decode(void) {
 
   assert_int(NGTCP2_ERR_MALFORMED_TRANSPORT_PARAM, ==, rv);
 
+  /* Duplicate transport parameter */
+  ngtcp2_buf_reset(&buf);
+  buf.last =
+    ngtcp2_put_uvarint(buf.last, NGTCP2_TRANSPORT_PARAM_INITIAL_MAX_DATA);
+  buf.last = ngtcp2_put_uvarint(buf.last, 1);
+  buf.last = ngtcp2_put_uvarint(buf.last, 1);
+  buf.last =
+    ngtcp2_put_uvarint(buf.last, NGTCP2_TRANSPORT_PARAM_INITIAL_MAX_DATA);
+  buf.last = ngtcp2_put_uvarint(buf.last, 1);
+  buf.last = ngtcp2_put_uvarint(buf.last, 2);
+
+  rv = ngtcp2_transport_params_decode(&params, buf.pos, ngtcp2_buf_len(&buf));
+
+  assert_int(NGTCP2_ERR_MALFORMED_TRANSPORT_PARAM, ==, rv);
+
   /* Prematurely truncated length of Connection ID parameter */
   ngtcp2_buf_reset(&buf);
   buf.last = ngtcp2_put_uvarint(
