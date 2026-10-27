@@ -10,6 +10,7 @@ Functions proven at the machine-code level:
 - ngtcp2_pkt_adjust_pkt_num  (AdjustPktNum.lean): decode==LLVM, execution
   recovers the packet number per RFC 9000 §17.1; + native bv_decide cross-check.
 - ngtcp2_get_uvarint / get_uvarintlen / put_uvarintlen (Varint.lean).
+- ngtcp2_ord_stream_id (OrdStreamId.lean): (sid >>arith 2) + 1, FULL functional correctness (result = srai 2 sid + 1); required extending the model with srai (arithmetic shift) + sltiu, both already present in the riscv-lean Sail base.
 - ngtcp2_put_uvarint (PutUvarint.lean): the varint ENCODER, 51 instructions / 30 byte-stores / 4 magnitude branches; with write access to [p,p+8) and n<2^62 the run does not fault (spatial WRITE-safety on every path).
 - ngtcp2_range_intersect (RangeIntersect.lean): decode==LLVM; with read access to exactly the two 16-byte argument objects it returns without faulting (spatial READ-safety across data-dependent branches) and performs no stores.
 - ngtcp2_range_init (RangeInit.lean): decode==LLVM, correct return, and

@@ -39,6 +39,8 @@ inductive Instr where
   | jal  (rd : Reg) (imm : BitVec 21)
   | slli (rd rs1 : Reg) (shamt : BitVec 6)
   | srli (rd rs1 : Reg) (shamt : BitVec 6)
+  | srai (rd rs1 : Reg) (shamt : BitVec 6)
+  | sltiu (rd rs1 : Reg) (imm : BitVec 12)
   | add  (rd rs1 rs2 : Reg)
   | sub  (rd rs1 rs2 : Reg)
   | sll  (rd rs1 rs2 : Reg)
@@ -74,10 +76,13 @@ def decode (w : BitVec 32) : Option Instr :=
     else if funct3 = 4#3 then some (.xori rd rs1 immI)
     else if funct3 = 6#3 then some (.ori rd rs1 immI)
     else if funct3 = 7#3 then some (.andi rd rs1 immI)
+    else if funct3 = 3#3 then some (.sltiu rd rs1 immI)
     else if funct3 = 1#3 ∧ w.extractLsb 31 26 = 0#6 then
       some (.slli rd rs1 (w.extractLsb 25 20))
     else if funct3 = 5#3 ∧ w.extractLsb 31 26 = 0#6 then
       some (.srli rd rs1 (w.extractLsb 25 20))
+    else if funct3 = 5#3 ∧ w.extractLsb 31 26 = 16#6 then
+      some (.srai rd rs1 (w.extractLsb 25 20))
     else none
   else if opcode = 0b0110011#7 then     -- OP
     if funct7 = 0#7 then
@@ -178,6 +183,8 @@ def exec (i : Instr) (s : State) : State :=
   | .xori rd rs1 imm   => (s.wr rd (RV64.xori imm (s.rd rs1))).next
   | .slli rd rs1 sh    => (s.wr rd (RV64.slli sh (s.rd rs1))).next
   | .srli rd rs1 sh    => (s.wr rd (RV64.srli sh (s.rd rs1))).next
+  | .srai rd rs1 sh    => (s.wr rd (RV64.srai sh (s.rd rs1))).next
+  | .sltiu rd rs1 imm  => (s.wr rd (RV64.sltiu imm (s.rd rs1))).next
   | .add rd rs1 rs2    => (s.wr rd (RV64.add (s.rd rs2) (s.rd rs1))).next
   | .sub rd rs1 rs2    => (s.wr rd (RV64.sub (s.rd rs2) (s.rd rs1))).next
   | .sll rd rs1 rs2    => (s.wr rd (RV64.sll (s.rd rs2) (s.rd rs1))).next

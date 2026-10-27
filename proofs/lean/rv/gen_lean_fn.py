@@ -51,9 +51,9 @@ for addr, word, op, args in lines:
     words.append(word)
     a = [x.strip() for x in re.sub(r"<.*>", "", args).split(",") if x.strip()]
     rel = lambda t: imm(t) - addr
-    if op in ("addi", "xori", "andi", "ori"):
+    if op in ("addi", "xori", "andi", "ori", "sltiu"):
         out.append(f"some (.{op} {r(a[0])} {r(a[1])} {imm(a[2]) & 0xfff}#12)")
-    elif op in ("slli", "srli"):
+    elif op in ("slli", "srli", "srai"):
         out.append(f"some (.{op} {r(a[0])} {r(a[1])} {imm(a[2])}#6)")
     elif op == "srliw":
         out.append(f"some (.srliw {r(a[0])} {r(a[1])} {imm(a[2])}#5)")
