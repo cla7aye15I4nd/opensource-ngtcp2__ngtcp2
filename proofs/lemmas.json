@@ -1214,5 +1214,14 @@
   ],
   "unwind": 3,
   "timeout": 600
+ },
+ {
+  "name": "crypto_create_nonce_safe",
+  "src": [
+   "ngtcp2_crypto.c",
+   "ngtcp2_str.c"
+  ],
+  "unwind": 17,
+  "timeout": 500
  }
 ]
