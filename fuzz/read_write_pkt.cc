@@ -119,7 +119,7 @@ int null_decrypt(uint8_t *dest, const ngtcp2_crypto_aead *aead,
     return NGTCP2_ERR_DECRYPT;
   }
 
-  memcpy(dest, ciphertext, ciphertextlen - aead->max_overhead);
+  memmove(dest, ciphertext, ciphertextlen - aead->max_overhead);
 
   return 0;
 }
