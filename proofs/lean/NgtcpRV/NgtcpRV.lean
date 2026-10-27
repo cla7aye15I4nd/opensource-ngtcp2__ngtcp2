@@ -56,7 +56,8 @@ import NgtcpRV.ConvRoundtrip
 import NgtcpRV.ConvRoundtrip1632
 import NgtcpRV.VarintRoundtrip
 import NgtcpRV.ConnCidLen
-import NgtcpRV.ConnVersionNeg
+import NgtcpRV.ConnVersion
+import NgtcpRV.ConnDupDetectNeg
 import NgtcpRV.ConnStreamId
 import NgtcpRV.ConnPpePadding
 import NgtcpRV.ConnHexEncode
@@ -102,6 +103,7 @@ import NgtcpRV.ConnStrmSend
 import NgtcpRV.ConnStrmRecvGate
 import NgtcpRV.ConnEcnCongestion
 import NgtcpRV.ConnVersion
+import NgtcpRV.ConnDupDetect
 import NgtcpRV.DcidtrVerify
 import NgtcpRV.RingBuf
 import NgtcpRV.RangeAlg
