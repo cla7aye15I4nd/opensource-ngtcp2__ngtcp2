@@ -1195,5 +1195,14 @@
   ],
   "unwind": 9,
   "timeout": 600
+ },
+ {
+  "name": "dcidtr_getters_safe",
+  "src": [
+   "ngtcp2_ringbuf.c",
+   "ngtcp2_mem.c"
+  ],
+  "unwind": 2,
+  "timeout": 300
  }
 ]
