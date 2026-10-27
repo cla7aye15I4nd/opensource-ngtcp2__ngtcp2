@@ -43,6 +43,7 @@ import NgtcpRV.CryptoHeaderProt
 import NgtcpRV.CryptoCmemeq
 import NgtcpRV.ConnComposite
 import NgtcpRV.ConnFullModel
+import NgtcpRV.ConnCryptoLevel
 import NgtcpRV.DcidtrVerify
 import NgtcpRV.RingBuf
 import NgtcpRV.RangeAlg
