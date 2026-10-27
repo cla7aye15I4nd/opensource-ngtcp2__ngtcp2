@@ -1078,5 +1078,19 @@
   "src": [],
   "unwind": 3,
   "timeout": 600
+ },
+ {
+  "name": "bbr_updaters_no_ub",
+  "src": [],
+  "unwind": 3,
+  "timeout": 600
+ },
+ {
+  "name": "wf_update_safe",
+  "src": [
+   "ngtcp2_wf.c"
+  ],
+  "unwind": 2,
+  "timeout": 300
  }
 ]

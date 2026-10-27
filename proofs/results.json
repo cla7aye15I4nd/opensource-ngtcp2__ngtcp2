@@ -1481,5 +1481,53 @@
    "tail": ""
   },
   "verdict": "PROVED"
+ },
+ "bbr_updaters_no_ub": {
+  "lemma": {
+   "name": "bbr_updaters_no_ub",
+   "src": [],
+   "unwind": 3,
+   "timeout": 600
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 0.16,
+   "failures": [],
+   "obligations": 2810,
+   "tail": ""
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 0.16,
+   "failures": [],
+   "obligations": 2810,
+   "tail": ""
+  },
+  "verdict": "PROVED"
+ },
+ "wf_update_safe": {
+  "lemma": {
+   "name": "wf_update_safe",
+   "src": [
+    "ngtcp2_wf.c"
+   ],
+   "unwind": 2,
+   "timeout": 300
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 0.07,
+   "failures": [],
+   "obligations": 199,
+   "tail": ""
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 0.07,
+   "failures": [],
+   "obligations": 199,
+   "tail": ""
+  },
+  "verdict": "PROVED"
  }
 }
