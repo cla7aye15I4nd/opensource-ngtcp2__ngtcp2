@@ -1650,5 +1650,31 @@
    "tail": ""
   },
   "verdict": "PROVED"
+ },
+ "bbr_model_update_no_ub": {
+  "lemma": {
+   "name": "bbr_model_update_no_ub",
+   "src": [
+    "ngtcp2_pcg.c",
+    "ngtcp2_wf.c"
+   ],
+   "unwind": 4,
+   "timeout": 900
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 0.79,
+   "failures": [],
+   "obligations": 3034,
+   "tail": ""
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 0.9,
+   "failures": [],
+   "obligations": 3034,
+   "tail": ""
+  },
+  "verdict": "PROVED"
  }
 }

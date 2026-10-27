@@ -1128,5 +1128,14 @@
   ],
   "unwind": 3,
   "timeout": 700
+ },
+ {
+  "name": "bbr_model_update_no_ub",
+  "src": [
+   "ngtcp2_pcg.c",
+   "ngtcp2_wf.c"
+  ],
+  "unwind": 4,
+  "timeout": 900
  }
 ]
