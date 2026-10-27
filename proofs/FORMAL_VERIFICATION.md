@@ -134,7 +134,7 @@ proofs (`AdjustPktNum`, `RangeInit`, `RangeIntersect`, `PutUvarint`, …) that
 verify the *compiled* object code of leaf functions — strictly stronger than a
 C-level proof, since they assume nothing about the compiler.
 
-### Full deductive module index (50 modules, all kernel-checked)
+### Full deductive module index (~79 modules, all kernel-checked)
 
 - **Data-structure primitives**: `RangeAlg`, `RingBuf`, `KslSearch`, `KslSplit`,
   `KslSplitSorted` (ksl: within-block search for all sizes + split memory-safety
@@ -160,7 +160,25 @@ C-level proof, since they assume nothing about the compiler.
 - **Composite dispatch interpreters**: `ConnComposite` (5 invariants, 11 events),
   `ConnFullModel` (8 invariants, 17 events) — a single `step` function whose
   reachable states all satisfy the full safety invariant; the operational-
-  semantics direction for the `conn.c` dispatch loop.
+  semantics direction for the `conn.c` dispatch loop. `ConnSafety` derives the
+  individual named guarantees (flow control, anti-amplification, …) as corollaries.
+- **Congestion control & loss detection**: `ConnRttSmooth` (smoothed-RTT stays in
+  range), `ConnMinRtt` (min_rtt lower bound), `ConnRecovery` (one reduction per
+  recovery period), `ConnSlowStart` (loss exits slow start), `ConnInFlight`
+  (bytes-in-flight no underflow), `ConnLossThreshold` (loss threshold stable),
+  `ConnAckDelay` (ACK-delay scaling bounded), `ConnMaxData` / `ConnWindowTune`
+  (advertised limit monotone / window auto-tuning bounded).
+- **Packet & frame parsing**: `ConnLongHeader` / `ConnShortHeader` (header-byte
+  decode), `ConnStreamFrameType` (STREAM flag bijection), `ConnStreamId` (stream-ID
+  index/type bijection), `ConnFrameAllow` (handshake frame allowlist),
+  `ConnAckEliciting`, `ConnAckGap` (ACK gap encoding), `ConnPktNumSpace`,
+  `ConnStatelessReset` (token read in bounds), `ConnHexEncode`,
+  `ConvRoundtrip1632`, `ConnDatagram`, `ConnNewToken`, `ConnPktNumUnique`
+  (packet-number ⇒ nonce uniqueness).
+- **Transport-parameter validation**: `ConnActiveCidLimit`, `ConnMaxStreams`,
+  `ConnMaxUdpPayload`, `ConnMaxAckDelay`.
+
+(~79 deductive modules in total; this index names the principal ones.)
 
 Each module's top theorem `#print axioms` depends only on the standard
 `[propext, Classical.choice, Quot.sound]` (several on fewer), so the elaborator's
