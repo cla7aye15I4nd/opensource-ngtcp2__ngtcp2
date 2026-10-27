@@ -26,3 +26,5 @@ open NgtcpRV
 #print axioms isReserved_ok
 #print axioms isSupported_ok
 #print axioms getTypeLong_ok
+/-! vec_len_varint loop proved by induction (kernel-checked). -/
+#print axioms NgtcpRV.VecLenVarint.run_safe
