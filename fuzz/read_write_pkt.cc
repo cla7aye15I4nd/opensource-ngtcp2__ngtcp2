@@ -1046,10 +1046,9 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t *data, size_t size) {
   }
 
   ngtcp2_tstamp ts{};
+  auto ccerr = ngtcp2_conn_get_ccerr2(conn);
 
   read_write(conn, fuzzed_data_provider, &ps.path, ts);
-
-  auto ccerr = ngtcp2_conn_get_ccerr2(conn);
 
   ngtcp2_pkt_info pi{};
 
