@@ -90,6 +90,7 @@ import NgtcpRV.ConnKeepAlive
 import NgtcpRV.ConnBuf
 import NgtcpRV.ConnCidRetire
 import NgtcpRV.ConnCwndLimit
+import NgtcpRV.ConnSpinBit
 import NgtcpRV.DcidtrVerify
 import NgtcpRV.RingBuf
 import NgtcpRV.RangeAlg
