@@ -137,6 +137,7 @@ import NgtcpRV.ConnErrorCode
 import NgtcpRV.ConnPreferredAddr
 import NgtcpRV.ConnActiveDcid
 import NgtcpRV.ConnResetFinalSize
+import NgtcpRV.ConnScidPool
 import NgtcpRV.DcidtrVerify
 import NgtcpRV.RingBuf
 import NgtcpRV.RangeAlg
