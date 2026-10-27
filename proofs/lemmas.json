@@ -1137,5 +1137,23 @@
   ],
   "unwind": 4,
   "timeout": 900
+ },
+ {
+  "name": "bbr_on_init_no_ub",
+  "src": [
+   "ngtcp2_pcg.c",
+   "ngtcp2_wf.c"
+  ],
+  "unwind": 4,
+  "timeout": 600
+ },
+ {
+  "name": "bbr_orchestrators_no_ub",
+  "src": [
+   "ngtcp2_pcg.c",
+   "ngtcp2_wf.c"
+  ],
+  "unwind": 4,
+  "timeout": 1000
  }
 ]
