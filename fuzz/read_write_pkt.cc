@@ -872,7 +872,8 @@ ngtcp2_conn *setup_conn(FuzzedDataProvider &fuzzed_data_provider,
 
 namespace {
 int read_write(ngtcp2_conn *conn, FuzzedDataProvider &fuzzed_data_provider,
-               const ngtcp2_path *path, ngtcp2_tstamp &ts) {
+               const ngtcp2_path *path, ngtcp2_tstamp &ts,
+               std::vector<std::vector<uint8_t>> &chunks) {
   auto pi = ngtcp2_pkt_info{
     .ecn = static_cast<uint8_t>(fuzzed_data_provider.PickValueInArray({
       NGTCP2_ECN_NOT_ECT,
@@ -883,7 +884,6 @@ int read_write(ngtcp2_conn *conn, FuzzedDataProvider &fuzzed_data_provider,
   };
 
   std::array<uint8_t, 1500> pkt;
-  std::vector<std::vector<uint8_t>> chunks;
 
   while (fuzzed_data_provider.remaining_bytes() > 0) {
     ts = fuzzed_data_provider.ConsumeIntegralInRange<ngtcp2_tstamp>(
@@ -1046,8 +1046,9 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t *data, size_t size) {
   }
 
   ngtcp2_tstamp ts{};
+  std::vector<std::vector<uint8_t>> chunks;
 
-  read_write(conn, fuzzed_data_provider, &ps.path, ts);
+  read_write(conn, fuzzed_data_provider, &ps.path, ts, chunks);
 
   auto ccerr = ngtcp2_conn_get_ccerr2(conn);
 
