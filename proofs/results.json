@@ -1810,5 +1810,31 @@
    "tail": ""
   },
   "verdict": "PROVED"
+ },
+ "dcidtr_readers_safe": {
+  "lemma": {
+   "name": "dcidtr_readers_safe",
+   "src": [
+    "ngtcp2_ringbuf.c",
+    "ngtcp2_mem.c"
+   ],
+   "unwind": 9,
+   "timeout": 600
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 1.9,
+   "failures": [],
+   "obligations": 530,
+   "tail": ""
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 8.88,
+   "failures": [],
+   "obligations": 530,
+   "tail": ""
+  },
+  "verdict": "PROVED"
  }
 }
