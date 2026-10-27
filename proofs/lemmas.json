@@ -1338,5 +1338,15 @@
   ],
   "unwind": 8,
   "timeout": 500
+ },
+ {
+  "name": "pkt_max_datalen_safe",
+  "src": [
+   "ngtcp2_pkt.c",
+   "ngtcp2_conv.c",
+   "ngtcp2_str.c"
+  ],
+  "unwind": 3,
+  "timeout": 500
  }
 ]
