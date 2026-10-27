@@ -22,6 +22,7 @@ import NgtcpRV.ConnPkt
 import NgtcpRV.ConnCid
 import NgtcpRV.StrmFlow
 import NgtcpRV.ConnRecvInv
+import NgtcpRV.ConnPktNum
 import NgtcpRV.DcidtrVerify
 import NgtcpRV.RingBuf
 import NgtcpRV.RangeAlg
