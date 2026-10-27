@@ -152,3 +152,4 @@ import NgtcpRV.ConnHpLengths
 import NgtcpRV.AckDecodeSafe
 import NgtcpRV.FrameVarlenSafe
 import NgtcpRV.StreamDecodeSafe
+import NgtcpRV.TransportParamPrefAddr
