@@ -60,18 +60,11 @@ theorem step_preserves (acc : Option (BitVec 64)) (len : BitVec 64)
     split
     · simp [Inv]          -- overflow path: `none`, trivially safe
     · rename_i hle
-      -- ¬ (MAX - res < len), i.e. len ≤ MAX - res; with res ≤ MAX conclude res+len ≤ MAX
+      -- ¬ (MAX - res < len), i.e. len ≤ MAX - res; with res ≤ MAX conclude res+len ≤ MAX.
+      -- `bv_omega` discharges this bit-vector (mod-2^64) goal with a kernel-checked
+      -- certificate, without the kernel ever evaluating 2^64 by recursion.
       simp only [Inv, BitVec.not_lt] at hle ⊢
-      -- move to ℕ and finish with omega (no wrap, because the sums stay ≤ MAX < 2^64)
-      have hres : res.toNat ≤ MAXV.toNat := by simpa [BitVec.le_def] using h
-      have hlen : len.toNat ≤ (MAXV - res).toNat := by simpa [BitVec.le_def] using hle
-      have hsub : (MAXV - res).toNat = MAXV.toNat - res.toNat := by
-        rw [BitVec.toNat_sub]
-        have : (2 ^ 64 - res.toNat + MAXV.toNat) = MAXV.toNat + (2^64 - res.toNat) := by omega
-        omega
-      have hmax : MAXV.toNat = 4611686018427387903 := by decide
-      rw [BitVec.le_def, BitVec.toNat_add]
-      omega
+      bv_omega
 
 /-- **Main result**: for EVERY list of vector lengths — i.e. every `n`, every
 input — the loop returns either `-1` (`none`) or a value `≤ MAX`.  Proved by
@@ -86,7 +79,7 @@ theorem run_safe (lens : List (BitVec 64)) : Inv (run lens) := by
       intro acc h
       simp only [List.foldl_cons]
       exact ih (step acc x) (step_preserves acc x h)
-  exact gen lens (some 0#64) (by simp [Inv, MAXV, BitVec.le_def])
+  exact gen lens (some 0#64) (by simp only [Inv, BitVec.le_def, BitVec.toNat_ofNat]; exact Nat.zero_le _)
 
 /-- Corollary stated the way the C contract reads: the result is never a value
 outside the valid varint range, for inputs of unbounded size. -/
