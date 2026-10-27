@@ -48,8 +48,14 @@ verified surface.
 
 - `conn.c` (~14.7k lines of deeply-stateful packet handlers) is not isolable as
   per-function CBMC proofs; it needs deductive / invariant-based verification.
-- `ksl` insert/remove/split (B-tree rebalancing + dynamic allocation) and the
-  modules riding on it (`rob` reassembly, `acktr`, `gaptr`, `idtr`).
+- `ksl` insert/remove/split (B-tree rebalancing + dynamic allocation) as a whole
+  is not CBMC-tractable. The *within-block* search is proved for all sizes
+  (`KslSearch`, deductive layer). The modules riding on `ksl` now have their core
+  operations proved deductively at the set/arithmetic level: `gaptr_push`
+  (`GaptrPush`), `rob` (gap logic via `GaptrPush`, chunk-memcpy heap-safety via
+  `RobWrite`), `acktr` ACK-range `int64` overflow-freedom (`AcktrArith`), and
+  `idtr_open` (`IdtrOpen`). What remains unproved there is the B-tree rebalancing
+  itself (node split/merge on insert/remove).
 - A few monolithic functions (`transport_params_decode`,
   `cubic_cc_on_ack_recv`) exceed CBMC's practical solve budget as whole units;
   their bounds-checking primitives / risky arithmetic are proved or hand-audited.
