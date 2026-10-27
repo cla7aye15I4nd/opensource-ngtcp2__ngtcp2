@@ -89,4 +89,79 @@ theorem run_in_range (lens : List (BitVec 64)) (r : BitVec 64)
   rw [h] at this
   simpa [Inv] using this
 
+/-! ## Functional correctness: a sound AND complete overflow detector
+
+`run_safe` above shows the loop never produces an out-of-range value.  The
+stronger statements below pin down *exactly* what it computes, by relating it to
+`nsum`, the TRUE unbounded sum of the lengths (a plain `ℕ`, so it never wraps).
+Together they say the C function is a sound and complete overflow detector:
+it returns the exact sum precisely when the sum fits in a varint, and `-1`
+precisely when the sum would exceed `MAX`.  Both are proved by induction on the
+list — statements that unrolling to a fixed bound cannot even express. -/
+
+/-- The TRUE, unbounded sum of the vector lengths (plain `ℕ`, never wraps). -/
+def nsum : List (BitVec 64) → Nat
+  | [] => 0
+  | x :: xs => x.toNat + nsum xs
+
+/-- Once the loop has returned `-1`, it stays `-1`. -/
+theorem foldl_none (xs : List (BitVec 64)) : xs.foldl step none = none := by
+  induction xs with
+  | nil => rfl
+  | cons y ys ih => simp only [List.foldl_cons, step, ih]
+
+/-- Generalized spec over an accumulator `a`: started at `a`, the loop returns
+`some (a + Σlengths)` when that fits in a varint, and `-1` otherwise. -/
+theorem foldl_spec (xs : List (BitVec 64)) :
+    ∀ a : BitVec 64, a.toNat ≤ MAXV.toNat →
+      xs.foldl step (some a) =
+        if a.toNat + nsum xs ≤ MAXV.toNat
+        then some (BitVec.ofNat 64 (a.toNat + nsum xs)) else none := by
+  induction xs with
+  | nil =>
+    intro a ha
+    simp only [List.foldl_nil, nsum, Nat.add_zero]
+    rw [if_pos ha, BitVec.ofNat_toNat, BitVec.setWidth_eq]
+  | cons x xs ih =>
+    intro a ha
+    simp only [List.foldl_cons, step, nsum]
+    by_cases hg : MAXV - a < x
+    · rw [if_pos hg, foldl_none]
+      have hx : MAXV.toNat - a.toNat < x.toNat := by bv_omega
+      rw [if_neg (by omega)]
+    · rw [if_neg hg]
+      have hax : (a + x).toNat = a.toNat + x.toNat := by bv_omega
+      have hle : (a + x).toNat ≤ MAXV.toNat := by bv_omega
+      rw [ih (a + x) hle, hax, Nat.add_assoc]
+
+theorem zero_le_max : (0#64).toNat ≤ MAXV.toNat := by
+  show (0 : Nat) ≤ MAXV.toNat; exact Nat.zero_le _
+
+/-- **SOUNDNESS**: if the loop returns a value `r`, then `r` is the exact true sum
+of all the vector lengths, and that sum is a valid varint (`≤ MAX`) — no
+wraparound and no spurious overflow report. -/
+theorem run_sound (lens : List (BitVec 64)) (r : BitVec 64) (h : run lens = some r) :
+    r.toNat = nsum lens ∧ nsum lens ≤ MAXV.toNat := by
+  have hs := foldl_spec lens 0#64 zero_le_max
+  unfold run at h
+  rw [hs, (show (0#64).toNat = 0 from rfl), Nat.zero_add] at h
+  by_cases hc : nsum lens ≤ MAXV.toNat
+  · rw [if_pos hc] at h
+    injection h with h; subst h
+    refine ⟨?_, hc⟩
+    rw [BitVec.toNat_ofNat, Nat.mod_eq_of_lt (by have := MAXV.isLt; omega)]
+  · rw [if_neg hc] at h; exact absurd h (by simp)
+
+/-- **COMPLETENESS**: the loop returns `-1` (`none`) iff the true, unbounded sum of
+the lengths would exceed `MAX` — the overflow check fires exactly when it must,
+never early and never late. -/
+theorem run_overflow_iff (lens : List (BitVec 64)) :
+    run lens = none ↔ MAXV.toNat < nsum lens := by
+  have hs := foldl_spec lens 0#64 zero_le_max
+  unfold run
+  rw [hs, (show (0#64).toNat = 0 from rfl), Nat.zero_add]
+  by_cases hc : nsum lens ≤ MAXV.toNat
+  · rw [if_pos hc]; exact ⟨fun h => absurd h (by simp), fun h => by omega⟩
+  · rw [if_neg hc]; exact ⟨fun _ => by omega, fun _ => rfl⟩
+
 end NgtcpRV.VecLenVarint
