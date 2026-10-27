@@ -11,7 +11,7 @@ Inspired by the decompose-into-many-small-kernel-checked-lemmas approach:
 `prove.py` runs every entry in `lemmas.json`, each a tiny harness in `harness/`
 linked against the **unmodified** ngtcp2 sources.
 
-## What is proved (99 lemmas, ~25 modules)
+## What is proved (105 lemmas, ~28 modules)
 
 - **Stateless packet codec** — every frame decoder *and* encoder, long/short
   headers, version-negotiation and stateless-reset writers, the varint codec
@@ -28,6 +28,8 @@ linked against the **unmodified** ngtcp2 sources.
   incl. the `update_on_ack` orchestrator), cubic (events, `cbrt`,
   `compute_w_cubic`; the branch-heavy `on_ack_recv` is hand-audited — see below).
 - **Path / CID** — `pv` path validation, `dcidtr` CID-uniqueness + readers.
+- **Memory management** — `balloc` bump-pointer pool (16-alignment invariant), `opl` free-list, `objalloc`, `frame_chain` allocation.
+- **Crypto / API** — `crypto` key-material allocation + nonce creation, `settings`/`transport_params` default-setters.
 
 Guarantee for all of the above: no out-of-bounds read/write, no divide-by-zero,
 no undefined shift, no length/encode mismatch, no unsigned underflow.

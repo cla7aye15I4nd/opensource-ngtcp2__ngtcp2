@@ -1258,5 +1258,17 @@
   ],
   "unwind": 3,
   "timeout": 700
+ },
+ {
+  "name": "api_defaults_safe",
+  "src": [
+   "ngtcp2_settings.c",
+   "ngtcp2_transport_params.c",
+   "ngtcp2_conv.c",
+   "ngtcp2_str.c",
+   "ngtcp2_cid.c"
+  ],
+  "unwind": 3,
+  "timeout": 500
  }
 ]

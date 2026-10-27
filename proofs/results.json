@@ -2184,5 +2184,34 @@
    "tail": ""
   },
   "verdict": "PROVED"
+ },
+ "api_defaults_safe": {
+  "lemma": {
+   "name": "api_defaults_safe",
+   "src": [
+    "ngtcp2_settings.c",
+    "ngtcp2_transport_params.c",
+    "ngtcp2_conv.c",
+    "ngtcp2_str.c",
+    "ngtcp2_cid.c"
+   ],
+   "unwind": 3,
+   "timeout": 500
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 0.29,
+   "failures": [],
+   "obligations": 2037,
+   "tail": ""
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 0.3,
+   "failures": [],
+   "obligations": 2037,
+   "tail": ""
+  },
+  "verdict": "PROVED"
  }
 }
