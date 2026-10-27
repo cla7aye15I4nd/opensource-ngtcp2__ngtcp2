@@ -140,6 +140,7 @@ import NgtcpRV.ConnResetFinalSize
 import NgtcpRV.ConnScidPool
 import NgtcpRV.ConnLossDelay
 import NgtcpRV.ConnTimeUnits
+import NgtcpRV.ConnLossReduction
 import NgtcpRV.DcidtrVerify
 import NgtcpRV.RingBuf
 import NgtcpRV.RangeAlg
