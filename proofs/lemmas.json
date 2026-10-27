@@ -1348,5 +1348,16 @@
   ],
   "unwind": 3,
   "timeout": 500
+ },
+ {
+  "name": "pkt_hd_init_safe",
+  "src": [
+   "ngtcp2_pkt.c",
+   "ngtcp2_conv.c",
+   "ngtcp2_str.c",
+   "ngtcp2_cid.c"
+  ],
+  "unwind": 3,
+  "timeout": 400
  }
 ]
