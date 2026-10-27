@@ -52,6 +52,7 @@ import NgtcpRV.ConnPtoBackoff
 import NgtcpRV.ConnIdleTimeout
 import NgtcpRV.ConnRetirePriorTo
 import NgtcpRV.ConvRoundtrip
+import NgtcpRV.ConvRoundtrip1632
 import NgtcpRV.VarintRoundtrip
 import NgtcpRV.ConnCidLen
 import NgtcpRV.ConnVersionNeg
