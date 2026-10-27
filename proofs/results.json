@@ -1412,5 +1412,74 @@
    "tail": ""
   },
   "verdict": "PROVED"
+ },
+ "bbr_bdp_multiple_no_ub": {
+  "lemma": {
+   "name": "bbr_bdp_multiple_no_ub",
+   "src": [],
+   "unwind": 3,
+   "timeout": 600
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 0.14,
+   "failures": [],
+   "obligations": 2810,
+   "tail": ""
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 0.15,
+   "failures": [],
+   "obligations": 2810,
+   "tail": ""
+  },
+  "verdict": "PROVED"
+ },
+ "bbr_inflight_model_no_ub": {
+  "lemma": {
+   "name": "bbr_inflight_model_no_ub",
+   "src": [],
+   "unwind": 3,
+   "timeout": 700
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 0.15,
+   "failures": [],
+   "obligations": 2810,
+   "tail": ""
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 0.16,
+   "failures": [],
+   "obligations": 2810,
+   "tail": ""
+  },
+  "verdict": "PROVED"
+ },
+ "bbr_pacing_no_ub": {
+  "lemma": {
+   "name": "bbr_pacing_no_ub",
+   "src": [],
+   "unwind": 3,
+   "timeout": 600
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 0.15,
+   "failures": [],
+   "obligations": 2810,
+   "tail": ""
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 0.16,
+   "failures": [],
+   "obligations": 2810,
+   "tail": ""
+  },
+  "verdict": "PROVED"
  }
 }

@@ -1060,5 +1060,23 @@
   "src": [],
   "unwind": 3,
   "timeout": 900
+ },
+ {
+  "name": "bbr_bdp_multiple_no_ub",
+  "src": [],
+  "unwind": 3,
+  "timeout": 600
+ },
+ {
+  "name": "bbr_inflight_model_no_ub",
+  "src": [],
+  "unwind": 3,
+  "timeout": 700
+ },
+ {
+  "name": "bbr_pacing_no_ub",
+  "src": [],
+  "unwind": 3,
+  "timeout": 600
  }
 ]
