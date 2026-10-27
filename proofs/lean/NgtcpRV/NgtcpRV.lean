@@ -115,6 +115,7 @@ import NgtcpRV.ConnPktAckEliciting
 import NgtcpRV.ConnTlsHandshake
 import NgtcpRV.ConnHandshakeChain
 import NgtcpRV.ConnLevelFlow
+import NgtcpRV.ConnClosingPeriod
 import NgtcpRV.DcidtrVerify
 import NgtcpRV.RingBuf
 import NgtcpRV.RangeAlg
