@@ -83,3 +83,13 @@ split — and the modules that mutate ksl state (`rob`, `acktr`, `gaptr`, `idtr`
 `ngtcp2_pkt_split_vec_rand` is similarly out of reach: the full ngtcp2_pkt.c
 SSA combined with symbolic growing-array indexing OOMs CBMC even with the PCG
 RNG stubbed to its contract. Its building block ngtcp2_vec_split_at is proved.
+
+## ksl: also unreachable at reduced degree (2026-10-27)
+
+Beyond the OOM at the shipped degree (16 → 32-node blocks), a small-model
+attempt — rebuilding ksl at NGTCP2_KSL_DEGR=2 (4-node blocks, identical
+algorithm) to make the split path tractable — makes CBMC 6.6.0 abort with an
+internal invariant violation ("expr.id() != ID_if || ... type" mismatch) while
+type-checking ngtcp2_ksl.c. So the ksl B-tree is unreachable with this CBMC for
+two independent reasons (OOM at real degree; frontend crash at small degree).
+Verifying it needs a different tool (deductive: Frama-C/WP, or a Lean/Coq model).
