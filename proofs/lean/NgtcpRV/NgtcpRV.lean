@@ -36,6 +36,7 @@ import NgtcpRV.ConnStrmRecv
 import NgtcpRV.ConnStreamLimit
 import NgtcpRV.ConnAmplification
 import NgtcpRV.ConnStateMachine
+import NgtcpRV.QlogDigits
 import NgtcpRV.DcidtrVerify
 import NgtcpRV.RingBuf
 import NgtcpRV.RangeAlg
