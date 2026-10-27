@@ -24,6 +24,7 @@ import NgtcpRV.StrmFlow
 import NgtcpRV.ConnRecvInv
 import NgtcpRV.ConnPktNum
 import NgtcpRV.ConnSendInv
+import NgtcpRV.ConnKeyUpdate
 import NgtcpRV.DcidtrVerify
 import NgtcpRV.RingBuf
 import NgtcpRV.RangeAlg
