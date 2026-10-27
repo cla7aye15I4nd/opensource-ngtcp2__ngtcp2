@@ -125,6 +125,7 @@ import NgtcpRV.ConnAcktrBound
 import NgtcpRV.ConnStrmAcked
 import NgtcpRV.ConnTimerNot
 import NgtcpRV.ConnRecvLevelFlow
+import NgtcpRV.ConnRingbufResize
 import NgtcpRV.DcidtrVerify
 import NgtcpRV.RingBuf
 import NgtcpRV.RangeAlg
