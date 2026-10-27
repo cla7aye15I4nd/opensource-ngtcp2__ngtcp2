@@ -20,6 +20,7 @@ import NgtcpRV.ObjallocGet
 import NgtcpRV.ConnFlowControl
 import NgtcpRV.ConnPkt
 import NgtcpRV.ConnCid
+import NgtcpRV.StrmFlow
 import NgtcpRV.DcidtrVerify
 import NgtcpRV.RingBuf
 import NgtcpRV.RangeAlg
