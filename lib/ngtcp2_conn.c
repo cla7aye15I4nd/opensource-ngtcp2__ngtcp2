@@ -2491,8 +2491,21 @@ conn_crumble_initial_crypto(ngtcp2_conn *conn, ngtcp2_frame_chain **pfrc,
   }
 
   for (i = 1; i < datacnt; ++i) {
-    total_crypto_overhead -= 1 + ngtcp2_put_uvarintlen(offsets[i]) +
-                             ngtcp2_put_uvarintlen(data[i].len);
+    size_t frame_overhead = 1 + ngtcp2_put_uvarintlen(offsets[i]) +
+                            ngtcp2_put_uvarintlen(data[i].len);
+
+    /* The popped CRYPTO frame may already consist of more than
+       max_add_frames vectors (e.g. ClientHello submitted in many
+       non-contiguous chunks).  In that case the per-frame overhead can
+       exceed the space reserved in total_crypto_overhead; clamp instead
+       of underflowing size_t, which would otherwise feed a huge length
+       into ngtcp2_pkt_append_ping_and_padding. */
+    if (total_crypto_overhead <= frame_overhead) {
+      total_crypto_overhead = 0;
+      break;
+    }
+
+    total_crypto_overhead -= frame_overhead;
   }
 
   datacnt = ngtcp2_pkt_append_ping_and_padding(data, datacnt, &conn->pcg,
