@@ -14,3 +14,5 @@ open NgtcpRV
 /-! range_init machine-code proof (kernel-checked). -/
 #print axioms rangeInit_decode
 #print axioms rangeInit_ok
+#print axioms rangeIntersect_decode
+#print axioms rangeIntersect_ok
