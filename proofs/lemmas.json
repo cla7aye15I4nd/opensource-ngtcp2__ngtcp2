@@ -1054,5 +1054,11 @@
   "src": [],
   "unwind": 3,
   "timeout": 600
+ },
+ {
+  "name": "bbr_inflight_helpers_no_ub",
+  "src": [],
+  "unwind": 3,
+  "timeout": 900
  }
 ]

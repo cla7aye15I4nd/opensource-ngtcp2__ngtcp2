@@ -1389,5 +1389,28 @@
    "tail": ""
   },
   "verdict": "PROVED"
+ },
+ "bbr_inflight_helpers_no_ub": {
+  "lemma": {
+   "name": "bbr_inflight_helpers_no_ub",
+   "src": [],
+   "unwind": 3,
+   "timeout": 900
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 0.17,
+   "failures": [],
+   "obligations": 2810,
+   "tail": ""
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 0.17,
+   "failures": [],
+   "obligations": 2810,
+   "tail": ""
+  },
+  "verdict": "PROVED"
  }
 }
