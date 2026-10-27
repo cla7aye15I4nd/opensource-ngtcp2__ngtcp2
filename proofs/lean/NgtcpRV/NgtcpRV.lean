@@ -46,6 +46,7 @@ import NgtcpRV.ConnFullModel
 import NgtcpRV.ConnCryptoLevel
 import NgtcpRV.ConnVarintLen
 import NgtcpRV.PktNumDecode
+import NgtcpRV.StreamOffset
 import NgtcpRV.DcidtrVerify
 import NgtcpRV.RingBuf
 import NgtcpRV.RangeAlg
