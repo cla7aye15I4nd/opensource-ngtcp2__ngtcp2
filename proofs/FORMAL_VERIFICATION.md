@@ -66,3 +66,14 @@ verified surface.
 - Static ring buffers are set up via the generated `*_init` + `push_back`.
 
 Run: `PROVE_JOBS=2 PROVE_MEM_GB=4 python3 prove.py [lemma names...]`
+
+## Empirical note on the ksl core (2026-10-27)
+
+`ngtcp2_ksl_insert` was attempted directly (single insert into an empty ksl,
+no block split). CBMC exhausts >12 GB and OOMs on both backends: a ksl block
+embeds `nodes[NGTCP2_KSL_MAX_NBLK]` (32) plus the keys buffer, and bit-blasting
+that structure together with objalloc/balloc allocation modelling is beyond
+CBMC's practical reach even for one insert. This is why `ksl` insert/remove/
+split — and the modules that mutate ksl state (`rob`, `acktr`, `gaptr`, `idtr`)
+— are out of scope for this isolated-harness method. The ksl *read* path
+(within-block search, all comparators) IS proved.
