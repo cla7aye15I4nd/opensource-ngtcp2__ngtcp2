@@ -70,6 +70,7 @@ import NgtcpRV.ConnRttSmooth
 import NgtcpRV.ConnMinRtt
 import NgtcpRV.ConnRecovery
 import NgtcpRV.ConnSlowStart
+import NgtcpRV.ConnStreamFrameType
 import NgtcpRV.DcidtrVerify
 import NgtcpRV.RingBuf
 import NgtcpRV.RangeAlg
