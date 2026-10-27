@@ -16,3 +16,5 @@ open NgtcpRV
 #print axioms rangeInit_ok
 #print axioms rangeIntersect_decode
 #print axioms rangeIntersect_ok
+#print axioms putUvarint_decode
+#print axioms putUvarint_ok
