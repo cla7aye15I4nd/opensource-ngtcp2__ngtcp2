@@ -2098,5 +2098,61 @@
    "tail": ""
   },
   "verdict": "PROVED"
+ },
+ "balloc_get_safe": {
+  "lemma": {
+   "name": "balloc_get_safe",
+   "src": [
+    "ngtcp2_balloc.c",
+    "ngtcp2_buf.c",
+    "ngtcp2_mem.c"
+   ],
+   "unwind": 4,
+   "timeout": 700
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 0.2,
+   "failures": [],
+   "obligations": 383,
+   "tail": ""
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 0.27,
+   "failures": [],
+   "obligations": 383,
+   "tail": ""
+  },
+  "verdict": "PROVED"
+ },
+ "opl_objalloc_safe": {
+  "lemma": {
+   "name": "opl_objalloc_safe",
+   "src": [
+    "ngtcp2_opl.c",
+    "ngtcp2_objalloc.c",
+    "ngtcp2_balloc.c",
+    "ngtcp2_buf.c",
+    "ngtcp2_mem.c"
+   ],
+   "unwind": 3,
+   "timeout": 500
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 0.21,
+   "failures": [],
+   "obligations": 431,
+   "tail": ""
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 0.22,
+   "failures": [],
+   "obligations": 431,
+   "tail": ""
+  },
+  "verdict": "PROVED"
  }
 }
