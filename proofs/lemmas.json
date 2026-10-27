@@ -1175,5 +1175,16 @@
   ],
   "unwind": 9,
   "timeout": 600
+ },
+ {
+  "name": "dcidtr_verify_cid_safe",
+  "src": [
+   "ngtcp2_ringbuf.c",
+   "ngtcp2_cid.c",
+   "ngtcp2_str.c",
+   "ngtcp2_mem.c"
+  ],
+  "unwind": 9,
+  "timeout": 700
  }
 ]

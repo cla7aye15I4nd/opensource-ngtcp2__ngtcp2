@@ -1782,5 +1782,33 @@
    "tail": ""
   },
   "verdict": "PROVED"
+ },
+ "dcidtr_verify_cid_safe": {
+  "lemma": {
+   "name": "dcidtr_verify_cid_safe",
+   "src": [
+    "ngtcp2_ringbuf.c",
+    "ngtcp2_cid.c",
+    "ngtcp2_str.c",
+    "ngtcp2_mem.c"
+   ],
+   "unwind": 9,
+   "timeout": 700
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 5.08,
+   "failures": [],
+   "obligations": 1424,
+   "tail": ""
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 8.57,
+   "failures": [],
+   "obligations": 1424,
+   "tail": ""
+  },
+  "verdict": "PROVED"
  }
 }
