@@ -14,6 +14,7 @@ import NgtcpRV.VersionPreds
 import NgtcpRV.GetTypeLong
 import NgtcpRV.VecLenVarint
 import NgtcpRV.KslSearch
+import NgtcpRV.KslSplit
 import NgtcpRV.RingBuf
 import NgtcpRV.RangeAlg
 import NgtcpRV.GaptrPush
