@@ -134,6 +134,38 @@ proofs (`AdjustPktNum`, `RangeInit`, `RangeIntersect`, `PutUvarint`, …) that
 verify the *compiled* object code of leaf functions — strictly stronger than a
 C-level proof, since they assume nothing about the compiler.
 
+### Full deductive module index (50 modules, all kernel-checked)
+
+- **Data-structure primitives**: `RangeAlg`, `RingBuf`, `KslSearch`, `KslSplit`,
+  `KslSplitSorted` (ksl: within-block search for all sizes + split memory-safety
+  + split sorted-order preservation).
+- **Stateful data structures**: `GaptrPush`, `RobWrite`, `AcktrArith`,
+  `ConnAcktrMax`, `IdtrOpen`, `DcidtrVerify`.
+- **Allocators**: `BallocGet`, `ObjallocGet`.
+- **Crypto primitives**: `CryptoNonce` (AEAD nonce uniqueness),
+  `CryptoHeaderProt` (header-protection reversibility), `CryptoCmemeq`
+  (constant-time compare correctness).
+- **Wire codec**: `ConnVarintLen`, `VarintRoundtrip`, `ConvRoundtrip` (uint64 BE
+  roundtrip), `PktNumDecode` (packet-number decode congruence), `QlogDigits`
+  (uint64 decimal-length bound), `VecLenVarint` (sound+complete overflow
+  detector), `ConnCidLen` (CID-length buffer safety).
+- **conn.c safety helpers**: `ConnFlowControl`, `ConnPkt`, `StrmFlow`,
+  `ConnCid`, `StreamOffset`.
+- **conn.c whole-history state-machine invariants**: `ConnRecvInv`,
+  `ConnSendInv`, `ConnPktNum`, `ConnKeyUpdate`, `ConnStrmState`, `ConnStrmRecv`,
+  `ConnFinalSize`, `ConnStreamLimit`, `ConnAmplification`, `ConnCongestion`,
+  `ConnHandshake`, `ConnPathVal`, `ConnStateMachine` (teardown irreversibility),
+  `ConnEcn`, `ConnPtoBackoff`, `ConnIdleTimeout`, `ConnRetirePriorTo`,
+  `ConnCryptoLevel`, `ConnVersionNeg`.
+- **Composite dispatch interpreters**: `ConnComposite` (5 invariants, 11 events),
+  `ConnFullModel` (8 invariants, 17 events) — a single `step` function whose
+  reachable states all satisfy the full safety invariant; the operational-
+  semantics direction for the `conn.c` dispatch loop.
+
+Each module's top theorem `#print axioms` depends only on the standard
+`[propext, Classical.choice, Quot.sound]` (several on fewer), so the elaborator's
+results are confirmed by the Lean kernel.
+
 ## Techniques (see commit history)
 
 - External CaDiCaL for SAT (the built-in `--sat-solver cadical` is unavailable
