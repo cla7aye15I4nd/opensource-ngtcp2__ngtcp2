@@ -1092,5 +1092,33 @@
   ],
   "unwind": 2,
   "timeout": 300
+ },
+ {
+  "name": "bbr_bandwidth_no_ub",
+  "src": [
+   "ngtcp2_wf.c"
+  ],
+  "unwind": 3,
+  "timeout": 700
+ },
+ {
+  "name": "bbr_cwnd_bound_no_ub",
+  "src": [],
+  "unwind": 3,
+  "timeout": 600
+ },
+ {
+  "name": "bbr_state_resets_no_ub",
+  "src": [],
+  "unwind": 3,
+  "timeout": 600
+ },
+ {
+  "name": "bbr_probe_state_no_ub",
+  "src": [
+   "ngtcp2_pcg.c"
+  ],
+  "unwind": 3,
+  "timeout": 700
  }
 ]
