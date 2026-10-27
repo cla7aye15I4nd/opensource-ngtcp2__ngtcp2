@@ -2346,5 +2346,60 @@
    "tail": ""
   },
   "verdict": "PROVED"
+ },
+ "container_ctors_safe": {
+  "lemma": {
+   "name": "container_ctors_safe",
+   "src": [
+    "ngtcp2_cid.c",
+    "ngtcp2_vec.c",
+    "ngtcp2_str.c",
+    "ngtcp2_mem.c"
+   ],
+   "unwind": 6,
+   "timeout": 400
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 0.29,
+   "failures": [],
+   "obligations": 1792,
+   "tail": ""
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 0.29,
+   "failures": [],
+   "obligations": 1792,
+   "tail": ""
+  },
+  "verdict": "PROVED"
+ },
+ "cid_copy_safe": {
+  "lemma": {
+   "name": "cid_copy_safe",
+   "src": [
+    "ngtcp2_cid.c",
+    "ngtcp2_pq.c",
+    "ngtcp2_str.c"
+   ],
+   "unwind": 3,
+   "timeout": 400
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 0.17,
+   "failures": [],
+   "obligations": 1319,
+   "tail": ""
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 0.17,
+   "failures": [],
+   "obligations": 1319,
+   "tail": ""
+  },
+  "verdict": "PROVED"
  }
 }

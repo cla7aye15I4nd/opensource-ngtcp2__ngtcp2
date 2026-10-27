@@ -1309,5 +1309,26 @@
   ],
   "unwind": 3,
   "timeout": 400
+ },
+ {
+  "name": "container_ctors_safe",
+  "src": [
+   "ngtcp2_cid.c",
+   "ngtcp2_vec.c",
+   "ngtcp2_str.c",
+   "ngtcp2_mem.c"
+  ],
+  "unwind": 6,
+  "timeout": 400
+ },
+ {
+  "name": "cid_copy_safe",
+  "src": [
+   "ngtcp2_cid.c",
+   "ngtcp2_pq.c",
+   "ngtcp2_str.c"
+  ],
+  "unwind": 3,
+  "timeout": 400
  }
 ]
