@@ -80,6 +80,7 @@ import NgtcpRV.ConnAckDelay
 import NgtcpRV.ConnMaxStreams
 import NgtcpRV.ConnWindowTune
 import NgtcpRV.ConnAckEliciting
+import NgtcpRV.ConnNewToken
 import NgtcpRV.DcidtrVerify
 import NgtcpRV.RingBuf
 import NgtcpRV.RangeAlg
