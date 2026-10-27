@@ -138,6 +138,7 @@ import NgtcpRV.ConnPreferredAddr
 import NgtcpRV.ConnActiveDcid
 import NgtcpRV.ConnResetFinalSize
 import NgtcpRV.ConnScidPool
+import NgtcpRV.ConnLossDelay
 import NgtcpRV.DcidtrVerify
 import NgtcpRV.RingBuf
 import NgtcpRV.RangeAlg
