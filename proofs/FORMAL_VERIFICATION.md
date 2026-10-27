@@ -46,16 +46,30 @@ verified surface.
 
 ## Scope boundary (what is NOT proved, and why)
 
-- `conn.c` (~14.7k lines of deeply-stateful packet handlers) is not isolable as
-  per-function CBMC proofs; it needs deductive / invariant-based verification.
-- `ksl` insert/remove/split (B-tree rebalancing + dynamic allocation) as a whole
-  is not CBMC-tractable. The *within-block* search is proved for all sizes
-  (`KslSearch`, deductive layer). The modules riding on `ksl` now have their core
-  operations proved deductively at the set/arithmetic level: `gaptr_push`
-  (`GaptrPush`), `rob` (gap logic via `GaptrPush`, chunk-memcpy heap-safety via
-  `RobWrite`), `acktr` ACK-range `int64` overflow-freedom (`AcktrArith`), and
-  `idtr_open` (`IdtrOpen`). What remains unproved there is the B-tree rebalancing
-  itself (node split/merge on insert/remove).
+- `conn.c` (~14.7k lines of deeply-stateful packet handlers): the whole-function
+  packet-dispatch control flow is not isolable as per-function CBMC proofs. Its
+  *connection-level safety invariants* are instead proved deductively as
+  state-machine invariants holding across every event history — flow control both
+  directions (`ConnRecvInv`/`ConnSendInv`), anti-amplification
+  (`ConnAmplification`), packet-number monotonicity (`ConnPktNum`), key-update
+  one-at-a-time (`ConnKeyUpdate`), handshake ordering (`ConnHandshake`), stream
+  shutdown/final-size (`ConnStrmState`/`ConnStrmRecv`/`ConnFinalSize`), stream and
+  CID limits (`ConnStreamLimit`/`ConnCid`), path-validation and congestion bounds
+  (`ConnPathVal`/`ConnCongestion`), and teardown irreversibility
+  (`ConnStateMachine`), plus the pure arithmetic helpers (`ConnFlowControl`,
+  `ConnPkt`, `StrmFlow`). What remains is the dispatch loop's full operational
+  semantics, which needs a modeled interpreter rather than more invariants.
+- `ksl` insert/remove/split: the *within-block* search is proved for all sizes
+  (`KslSearch`) and the split memcpy/memmove index arithmetic is proved in bounds
+  (`KslSplit`). The modules riding on `ksl` have their core operations proved
+  deductively: `gaptr_push` (`GaptrPush`), `rob` (gap logic + chunk-memcpy
+  heap-safety via `RobWrite`), `acktr` (`AcktrArith`/`ConnAcktrMax`), `idtr`
+  (`IdtrOpen`), `dcidtr` (`DcidtrVerify`). What remains is the B-tree *semantic*
+  invariant (sorted order preserved across node split/merge).
+- Allocators (`balloc`/`objalloc`): bump-advance safety and sizing composition
+  proved (`BallocGet`/`ObjallocGet`). `crypto`: AEAD nonce uniqueness proved
+  (`CryptoNonce`); the rest wraps an external TLS library. `qlog`: the uint64
+  decimal-length buffer bound proved (`QlogDigits`).
 - A few monolithic functions (`transport_params_decode`,
   `cubic_cc_on_ack_recv`) exceed CBMC's practical solve budget as whole units;
   their bounds-checking primitives / risky arithmetic are proved or hand-audited.
