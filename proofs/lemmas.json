@@ -1,0 +1,689 @@
+[
+ {
+  "name": "conv_uvarint_roundtrip",
+  "src": [
+   "ngtcp2_conv.c",
+   "ngtcp2_str.c"
+  ]
+ },
+ {
+  "name": "conv_uvarint_decode_safe",
+  "src": [
+   "ngtcp2_conv.c",
+   "ngtcp2_str.c"
+  ]
+ },
+ {
+  "name": "conv_pkt_num_roundtrip",
+  "src": [
+   "ngtcp2_conv.c",
+   "ngtcp2_str.c"
+  ]
+ },
+ {
+  "name": "conv_be_ints",
+  "src": [
+   "ngtcp2_conv.c",
+   "ngtcp2_str.c"
+  ],
+  "unwind": 10
+ },
+ {
+  "name": "conv_uvarint30",
+  "src": [
+   "ngtcp2_conv.c",
+   "ngtcp2_str.c"
+  ]
+ },
+ {
+  "name": "pkt_adjust_pkt_num_rfc",
+  "src": [
+   "ngtcp2_pkt.c",
+   "ngtcp2_conv.c",
+   "ngtcp2_str.c",
+   "ngtcp2_cid.c",
+   "ngtcp2_vec.c",
+   "ngtcp2_buf.c",
+   "ngtcp2_mem.c",
+   "ngtcp2_pcg.c",
+   "ngtcp2_path.c",
+   "ngtcp2_addr.c"
+  ]
+ },
+ {
+  "name": "pkt_adjust_pkt_num_recovers",
+  "src": [
+   "ngtcp2_pkt.c",
+   "ngtcp2_conv.c",
+   "ngtcp2_str.c",
+   "ngtcp2_cid.c",
+   "ngtcp2_vec.c",
+   "ngtcp2_buf.c",
+   "ngtcp2_mem.c",
+   "ngtcp2_pcg.c",
+   "ngtcp2_path.c",
+   "ngtcp2_addr.c"
+  ]
+ },
+ {
+  "name": "frame_decode_safe",
+  "id": "frame_padding",
+  "src": [
+   "ngtcp2_pkt.c",
+   "ngtcp2_conv.c",
+   "ngtcp2_str.c",
+   "ngtcp2_cid.c",
+   "ngtcp2_vec.c",
+   "ngtcp2_buf.c",
+   "ngtcp2_mem.c",
+   "ngtcp2_pcg.c",
+   "ngtcp2_path.c",
+   "ngtcp2_addr.c"
+  ],
+  "unwind": 18,
+  "extra": [
+   "-DFTYPE_LO=0",
+   "-DFTYPE_HI=0",
+   "-DMAXLEN=16"
+  ]
+ },
+ {
+  "name": "frame_decode_safe",
+  "id": "frame_ping",
+  "src": [
+   "ngtcp2_pkt.c",
+   "ngtcp2_conv.c",
+   "ngtcp2_str.c",
+   "ngtcp2_cid.c",
+   "ngtcp2_vec.c",
+   "ngtcp2_buf.c",
+   "ngtcp2_mem.c",
+   "ngtcp2_pcg.c",
+   "ngtcp2_path.c",
+   "ngtcp2_addr.c"
+  ],
+  "unwind": 10,
+  "extra": [
+   "-DFTYPE_LO=1",
+   "-DFTYPE_HI=1",
+   "-DMAXLEN=8"
+  ]
+ },
+ {
+  "name": "frame_decode_safe",
+  "id": "frame_ack",
+  "src": [
+   "ngtcp2_pkt.c",
+   "ngtcp2_conv.c",
+   "ngtcp2_str.c",
+   "ngtcp2_cid.c",
+   "ngtcp2_vec.c",
+   "ngtcp2_buf.c",
+   "ngtcp2_mem.c",
+   "ngtcp2_pcg.c",
+   "ngtcp2_path.c",
+   "ngtcp2_addr.c"
+  ],
+  "unwind": 22,
+  "extra": [
+   "-DFTYPE_LO=2",
+   "-DFTYPE_HI=2",
+   "-DMAXLEN=20"
+  ]
+ },
+ {
+  "name": "frame_decode_safe",
+  "id": "frame_ack_ecn",
+  "src": [
+   "ngtcp2_pkt.c",
+   "ngtcp2_conv.c",
+   "ngtcp2_str.c",
+   "ngtcp2_cid.c",
+   "ngtcp2_vec.c",
+   "ngtcp2_buf.c",
+   "ngtcp2_mem.c",
+   "ngtcp2_pcg.c",
+   "ngtcp2_path.c",
+   "ngtcp2_addr.c"
+  ],
+  "unwind": 22,
+  "extra": [
+   "-DFTYPE_LO=3",
+   "-DFTYPE_HI=3",
+   "-DMAXLEN=20"
+  ]
+ },
+ {
+  "name": "frame_decode_safe",
+  "id": "frame_reset_stream",
+  "src": [
+   "ngtcp2_pkt.c",
+   "ngtcp2_conv.c",
+   "ngtcp2_str.c",
+   "ngtcp2_cid.c",
+   "ngtcp2_vec.c",
+   "ngtcp2_buf.c",
+   "ngtcp2_mem.c",
+   "ngtcp2_pcg.c",
+   "ngtcp2_path.c",
+   "ngtcp2_addr.c"
+  ],
+  "unwind": 30,
+  "extra": [
+   "-DFTYPE_LO=4",
+   "-DFTYPE_HI=4",
+   "-DMAXLEN=28"
+  ]
+ },
+ {
+  "name": "frame_decode_safe",
+  "id": "frame_stop_sending",
+  "src": [
+   "ngtcp2_pkt.c",
+   "ngtcp2_conv.c",
+   "ngtcp2_str.c",
+   "ngtcp2_cid.c",
+   "ngtcp2_vec.c",
+   "ngtcp2_buf.c",
+   "ngtcp2_mem.c",
+   "ngtcp2_pcg.c",
+   "ngtcp2_path.c",
+   "ngtcp2_addr.c"
+  ],
+  "unwind": 22,
+  "extra": [
+   "-DFTYPE_LO=5",
+   "-DFTYPE_HI=5",
+   "-DMAXLEN=20"
+  ]
+ },
+ {
+  "name": "frame_decode_safe",
+  "id": "frame_crypto",
+  "src": [
+   "ngtcp2_pkt.c",
+   "ngtcp2_conv.c",
+   "ngtcp2_str.c",
+   "ngtcp2_cid.c",
+   "ngtcp2_vec.c",
+   "ngtcp2_buf.c",
+   "ngtcp2_mem.c",
+   "ngtcp2_pcg.c",
+   "ngtcp2_path.c",
+   "ngtcp2_addr.c"
+  ],
+  "unwind": 26,
+  "extra": [
+   "-DFTYPE_LO=6",
+   "-DFTYPE_HI=6",
+   "-DMAXLEN=24"
+  ]
+ },
+ {
+  "name": "frame_decode_safe",
+  "id": "frame_new_token",
+  "src": [
+   "ngtcp2_pkt.c",
+   "ngtcp2_conv.c",
+   "ngtcp2_str.c",
+   "ngtcp2_cid.c",
+   "ngtcp2_vec.c",
+   "ngtcp2_buf.c",
+   "ngtcp2_mem.c",
+   "ngtcp2_pcg.c",
+   "ngtcp2_path.c",
+   "ngtcp2_addr.c"
+  ],
+  "unwind": 22,
+  "extra": [
+   "-DFTYPE_LO=7",
+   "-DFTYPE_HI=7",
+   "-DMAXLEN=20"
+  ]
+ },
+ {
+  "name": "frame_decode_safe",
+  "id": "frame_stream",
+  "src": [
+   "ngtcp2_pkt.c",
+   "ngtcp2_conv.c",
+   "ngtcp2_str.c",
+   "ngtcp2_cid.c",
+   "ngtcp2_vec.c",
+   "ngtcp2_buf.c",
+   "ngtcp2_mem.c",
+   "ngtcp2_pcg.c",
+   "ngtcp2_path.c",
+   "ngtcp2_addr.c"
+  ],
+  "unwind": 30,
+  "extra": [
+   "-DFTYPE_LO=8",
+   "-DFTYPE_HI=15",
+   "-DMAXLEN=28"
+  ]
+ },
+ {
+  "name": "frame_decode_safe",
+  "id": "frame_max_data",
+  "src": [
+   "ngtcp2_pkt.c",
+   "ngtcp2_conv.c",
+   "ngtcp2_str.c",
+   "ngtcp2_cid.c",
+   "ngtcp2_vec.c",
+   "ngtcp2_buf.c",
+   "ngtcp2_mem.c",
+   "ngtcp2_pcg.c",
+   "ngtcp2_path.c",
+   "ngtcp2_addr.c"
+  ],
+  "unwind": 14,
+  "extra": [
+   "-DFTYPE_LO=16",
+   "-DFTYPE_HI=16",
+   "-DMAXLEN=12"
+  ]
+ },
+ {
+  "name": "frame_decode_safe",
+  "id": "frame_max_stream_data",
+  "src": [
+   "ngtcp2_pkt.c",
+   "ngtcp2_conv.c",
+   "ngtcp2_str.c",
+   "ngtcp2_cid.c",
+   "ngtcp2_vec.c",
+   "ngtcp2_buf.c",
+   "ngtcp2_mem.c",
+   "ngtcp2_pcg.c",
+   "ngtcp2_path.c",
+   "ngtcp2_addr.c"
+  ],
+  "unwind": 22,
+  "extra": [
+   "-DFTYPE_LO=17",
+   "-DFTYPE_HI=17",
+   "-DMAXLEN=20"
+  ]
+ },
+ {
+  "name": "frame_decode_safe",
+  "id": "frame_max_streams",
+  "src": [
+   "ngtcp2_pkt.c",
+   "ngtcp2_conv.c",
+   "ngtcp2_str.c",
+   "ngtcp2_cid.c",
+   "ngtcp2_vec.c",
+   "ngtcp2_buf.c",
+   "ngtcp2_mem.c",
+   "ngtcp2_pcg.c",
+   "ngtcp2_path.c",
+   "ngtcp2_addr.c"
+  ],
+  "unwind": 14,
+  "extra": [
+   "-DFTYPE_LO=18",
+   "-DFTYPE_HI=19",
+   "-DMAXLEN=12"
+  ]
+ },
+ {
+  "name": "frame_decode_safe",
+  "id": "frame_data_blocked",
+  "src": [
+   "ngtcp2_pkt.c",
+   "ngtcp2_conv.c",
+   "ngtcp2_str.c",
+   "ngtcp2_cid.c",
+   "ngtcp2_vec.c",
+   "ngtcp2_buf.c",
+   "ngtcp2_mem.c",
+   "ngtcp2_pcg.c",
+   "ngtcp2_path.c",
+   "ngtcp2_addr.c"
+  ],
+  "unwind": 14,
+  "extra": [
+   "-DFTYPE_LO=20",
+   "-DFTYPE_HI=20",
+   "-DMAXLEN=12"
+  ]
+ },
+ {
+  "name": "frame_decode_safe",
+  "id": "frame_stream_data_blocked",
+  "src": [
+   "ngtcp2_pkt.c",
+   "ngtcp2_conv.c",
+   "ngtcp2_str.c",
+   "ngtcp2_cid.c",
+   "ngtcp2_vec.c",
+   "ngtcp2_buf.c",
+   "ngtcp2_mem.c",
+   "ngtcp2_pcg.c",
+   "ngtcp2_path.c",
+   "ngtcp2_addr.c"
+  ],
+  "unwind": 22,
+  "extra": [
+   "-DFTYPE_LO=21",
+   "-DFTYPE_HI=21",
+   "-DMAXLEN=20"
+  ]
+ },
+ {
+  "name": "frame_decode_safe",
+  "id": "frame_streams_blocked",
+  "src": [
+   "ngtcp2_pkt.c",
+   "ngtcp2_conv.c",
+   "ngtcp2_str.c",
+   "ngtcp2_cid.c",
+   "ngtcp2_vec.c",
+   "ngtcp2_buf.c",
+   "ngtcp2_mem.c",
+   "ngtcp2_pcg.c",
+   "ngtcp2_path.c",
+   "ngtcp2_addr.c"
+  ],
+  "unwind": 14,
+  "extra": [
+   "-DFTYPE_LO=22",
+   "-DFTYPE_HI=23",
+   "-DMAXLEN=12"
+  ]
+ },
+ {
+  "name": "frame_decode_safe",
+  "id": "frame_new_connection_id",
+  "src": [
+   "ngtcp2_pkt.c",
+   "ngtcp2_conv.c",
+   "ngtcp2_str.c",
+   "ngtcp2_cid.c",
+   "ngtcp2_vec.c",
+   "ngtcp2_buf.c",
+   "ngtcp2_mem.c",
+   "ngtcp2_pcg.c",
+   "ngtcp2_path.c",
+   "ngtcp2_addr.c"
+  ],
+  "unwind": 50,
+  "extra": [
+   "-DFTYPE_LO=24",
+   "-DFTYPE_HI=24",
+   "-DMAXLEN=48"
+  ]
+ },
+ {
+  "name": "frame_decode_safe",
+  "id": "frame_retire_connection_id",
+  "src": [
+   "ngtcp2_pkt.c",
+   "ngtcp2_conv.c",
+   "ngtcp2_str.c",
+   "ngtcp2_cid.c",
+   "ngtcp2_vec.c",
+   "ngtcp2_buf.c",
+   "ngtcp2_mem.c",
+   "ngtcp2_pcg.c",
+   "ngtcp2_path.c",
+   "ngtcp2_addr.c"
+  ],
+  "unwind": 14,
+  "extra": [
+   "-DFTYPE_LO=25",
+   "-DFTYPE_HI=25",
+   "-DMAXLEN=12"
+  ]
+ },
+ {
+  "name": "frame_decode_safe",
+  "id": "frame_path_challenge",
+  "src": [
+   "ngtcp2_pkt.c",
+   "ngtcp2_conv.c",
+   "ngtcp2_str.c",
+   "ngtcp2_cid.c",
+   "ngtcp2_vec.c",
+   "ngtcp2_buf.c",
+   "ngtcp2_mem.c",
+   "ngtcp2_pcg.c",
+   "ngtcp2_path.c",
+   "ngtcp2_addr.c"
+  ],
+  "unwind": 14,
+  "extra": [
+   "-DFTYPE_LO=26",
+   "-DFTYPE_HI=26",
+   "-DMAXLEN=12"
+  ]
+ },
+ {
+  "name": "frame_decode_safe",
+  "id": "frame_path_response",
+  "src": [
+   "ngtcp2_pkt.c",
+   "ngtcp2_conv.c",
+   "ngtcp2_str.c",
+   "ngtcp2_cid.c",
+   "ngtcp2_vec.c",
+   "ngtcp2_buf.c",
+   "ngtcp2_mem.c",
+   "ngtcp2_pcg.c",
+   "ngtcp2_path.c",
+   "ngtcp2_addr.c"
+  ],
+  "unwind": 14,
+  "extra": [
+   "-DFTYPE_LO=27",
+   "-DFTYPE_HI=27",
+   "-DMAXLEN=12"
+  ]
+ },
+ {
+  "name": "frame_decode_safe",
+  "id": "frame_connection_close",
+  "src": [
+   "ngtcp2_pkt.c",
+   "ngtcp2_conv.c",
+   "ngtcp2_str.c",
+   "ngtcp2_cid.c",
+   "ngtcp2_vec.c",
+   "ngtcp2_buf.c",
+   "ngtcp2_mem.c",
+   "ngtcp2_pcg.c",
+   "ngtcp2_path.c",
+   "ngtcp2_addr.c"
+  ],
+  "unwind": 34,
+  "extra": [
+   "-DFTYPE_LO=28",
+   "-DFTYPE_HI=29",
+   "-DMAXLEN=32"
+  ]
+ },
+ {
+  "name": "frame_decode_safe",
+  "id": "frame_handshake_done",
+  "src": [
+   "ngtcp2_pkt.c",
+   "ngtcp2_conv.c",
+   "ngtcp2_str.c",
+   "ngtcp2_cid.c",
+   "ngtcp2_vec.c",
+   "ngtcp2_buf.c",
+   "ngtcp2_mem.c",
+   "ngtcp2_pcg.c",
+   "ngtcp2_path.c",
+   "ngtcp2_addr.c"
+  ],
+  "unwind": 6,
+  "extra": [
+   "-DFTYPE_LO=30",
+   "-DFTYPE_HI=30",
+   "-DMAXLEN=4"
+  ]
+ },
+ {
+  "name": "frame_decode_safe",
+  "id": "frame_datagram",
+  "src": [
+   "ngtcp2_pkt.c",
+   "ngtcp2_conv.c",
+   "ngtcp2_str.c",
+   "ngtcp2_cid.c",
+   "ngtcp2_vec.c",
+   "ngtcp2_buf.c",
+   "ngtcp2_mem.c",
+   "ngtcp2_pcg.c",
+   "ngtcp2_path.c",
+   "ngtcp2_addr.c"
+  ],
+  "unwind": 22,
+  "extra": [
+   "-DFTYPE_LO=48",
+   "-DFTYPE_HI=49",
+   "-DMAXLEN=20"
+  ]
+ },
+ {
+  "name": "frame_decode_safe",
+  "id": "frame_unknown_types",
+  "src": [
+   "ngtcp2_pkt.c",
+   "ngtcp2_conv.c",
+   "ngtcp2_str.c",
+   "ngtcp2_cid.c",
+   "ngtcp2_vec.c",
+   "ngtcp2_buf.c",
+   "ngtcp2_mem.c",
+   "ngtcp2_pcg.c",
+   "ngtcp2_path.c",
+   "ngtcp2_addr.c"
+  ],
+  "unwind": 10,
+  "extra": [
+   "-DFTYPE_LO=31",
+   "-DFTYPE_HI=47",
+   "-DMAXLEN=8"
+  ]
+ },
+ {
+  "name": "frame_decode_safe",
+  "id": "frame_unknown_types_hi",
+  "src": [
+   "ngtcp2_pkt.c",
+   "ngtcp2_conv.c",
+   "ngtcp2_str.c",
+   "ngtcp2_cid.c",
+   "ngtcp2_vec.c",
+   "ngtcp2_buf.c",
+   "ngtcp2_mem.c",
+   "ngtcp2_pcg.c",
+   "ngtcp2_path.c",
+   "ngtcp2_addr.c"
+  ],
+  "unwind": 10,
+  "extra": [
+   "-DFTYPE_LO=50",
+   "-DFTYPE_HI=255",
+   "-DMAXLEN=8"
+  ]
+ },
+ {
+  "name": "hd_long_decode_safe",
+  "src": [
+   "ngtcp2_pkt.c",
+   "ngtcp2_conv.c",
+   "ngtcp2_str.c",
+   "ngtcp2_cid.c",
+   "ngtcp2_vec.c",
+   "ngtcp2_buf.c",
+   "ngtcp2_mem.c",
+   "ngtcp2_pcg.c",
+   "ngtcp2_path.c",
+   "ngtcp2_addr.c"
+  ],
+  "unwind": 70,
+  "extra": [
+   "-DMAXLEN=64"
+  ]
+ },
+ {
+  "name": "hd_short_decode_safe",
+  "src": [
+   "ngtcp2_pkt.c",
+   "ngtcp2_conv.c",
+   "ngtcp2_str.c",
+   "ngtcp2_cid.c",
+   "ngtcp2_vec.c",
+   "ngtcp2_buf.c",
+   "ngtcp2_mem.c",
+   "ngtcp2_pcg.c",
+   "ngtcp2_path.c",
+   "ngtcp2_addr.c"
+  ],
+  "unwind": 30,
+  "extra": [
+   "-DMAXLEN=24"
+  ]
+ },
+ {
+  "name": "version_cid_decode_safe",
+  "src": [
+   "ngtcp2_pkt.c",
+   "ngtcp2_conv.c",
+   "ngtcp2_str.c",
+   "ngtcp2_cid.c",
+   "ngtcp2_vec.c",
+   "ngtcp2_buf.c",
+   "ngtcp2_mem.c",
+   "ngtcp2_pcg.c",
+   "ngtcp2_path.c",
+   "ngtcp2_addr.c"
+  ],
+  "unwind": 10,
+  "extra": [
+   "-DMAXLEN=1500"
+  ]
+ },
+ {
+  "name": "pkt_validate_ack_sound",
+  "src": [
+   "ngtcp2_pkt.c",
+   "ngtcp2_conv.c",
+   "ngtcp2_str.c",
+   "ngtcp2_cid.c",
+   "ngtcp2_vec.c",
+   "ngtcp2_buf.c",
+   "ngtcp2_mem.c",
+   "ngtcp2_pcg.c",
+   "ngtcp2_path.c",
+   "ngtcp2_addr.c"
+  ],
+  "unwind": 6,
+  "extra": [
+   "-DNRANGES=4"
+  ]
+ },
+ {
+  "name": "range_intersect",
+  "src": [
+   "ngtcp2_range.c"
+  ]
+ },
+ {
+  "name": "ringbuf_model",
+  "src": [
+   "ngtcp2_ringbuf.c",
+   "ngtcp2_mem.c"
+  ],
+  "unwind": 8,
+  "extra": [
+   "-DNOPS=6"
+  ]
+ }
+]

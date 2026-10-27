@@ -1,0 +1,265 @@
+{
+ "conv_uvarint_roundtrip": {
+  "lemma": {
+   "name": "conv_uvarint_roundtrip",
+   "src": [
+    "ngtcp2_conv.c",
+    "ngtcp2_str.c"
+   ]
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 0.2,
+   "failures": [],
+   "obligations": 1062,
+   "tail": ""
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 0.21,
+   "failures": [],
+   "obligations": 1062,
+   "tail": ""
+  },
+  "verdict": "PROVED"
+ },
+ "conv_uvarint_decode_safe": {
+  "lemma": {
+   "name": "conv_uvarint_decode_safe",
+   "src": [
+    "ngtcp2_conv.c",
+    "ngtcp2_str.c"
+   ]
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 0.21,
+   "failures": [],
+   "obligations": 1077,
+   "tail": ""
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 0.22,
+   "failures": [],
+   "obligations": 1077,
+   "tail": ""
+  },
+  "verdict": "PROVED"
+ },
+ "conv_pkt_num_roundtrip": {
+  "lemma": {
+   "name": "conv_pkt_num_roundtrip",
+   "src": [
+    "ngtcp2_conv.c",
+    "ngtcp2_str.c"
+   ]
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 0.2,
+   "failures": [],
+   "obligations": 1055,
+   "tail": ""
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 0.22,
+   "failures": [],
+   "obligations": 1055,
+   "tail": ""
+  },
+  "verdict": "PROVED"
+ },
+ "conv_be_ints": {
+  "lemma": {
+   "name": "conv_be_ints",
+   "src": [
+    "ngtcp2_conv.c",
+    "ngtcp2_str.c"
+   ],
+   "unwind": 10
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 0.2,
+   "failures": [],
+   "obligations": 1062,
+   "tail": ""
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 0.21,
+   "failures": [],
+   "obligations": 1062,
+   "tail": ""
+  },
+  "verdict": "PROVED"
+ },
+ "conv_uvarint30": {
+  "lemma": {
+   "name": "conv_uvarint30",
+   "src": [
+    "ngtcp2_conv.c",
+    "ngtcp2_str.c"
+   ]
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 0.2,
+   "failures": [],
+   "obligations": 1052,
+   "tail": ""
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 0.21,
+   "failures": [],
+   "obligations": 1052,
+   "tail": ""
+  },
+  "verdict": "PROVED"
+ },
+ "pkt_adjust_pkt_num_rfc": {
+  "lemma": {
+   "name": "pkt_adjust_pkt_num_rfc",
+   "src": [
+    "ngtcp2_pkt.c",
+    "ngtcp2_conv.c",
+    "ngtcp2_str.c",
+    "ngtcp2_cid.c",
+    "ngtcp2_vec.c",
+    "ngtcp2_buf.c",
+    "ngtcp2_mem.c",
+    "ngtcp2_pcg.c",
+    "ngtcp2_path.c",
+    "ngtcp2_addr.c"
+   ]
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 0.82,
+   "failures": [],
+   "obligations": 6686,
+   "tail": ""
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 0.84,
+   "failures": [],
+   "obligations": 6686,
+   "tail": ""
+  },
+  "verdict": "PROVED"
+ },
+ "pkt_adjust_pkt_num_recovers": {
+  "lemma": {
+   "name": "pkt_adjust_pkt_num_recovers",
+   "src": [
+    "ngtcp2_pkt.c",
+    "ngtcp2_conv.c",
+    "ngtcp2_str.c",
+    "ngtcp2_cid.c",
+    "ngtcp2_vec.c",
+    "ngtcp2_buf.c",
+    "ngtcp2_mem.c",
+    "ngtcp2_pcg.c",
+    "ngtcp2_path.c",
+    "ngtcp2_addr.c"
+   ]
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 0.82,
+   "failures": [],
+   "obligations": 6687,
+   "tail": ""
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 0.85,
+   "failures": [],
+   "obligations": 6687,
+   "tail": ""
+  },
+  "verdict": "PROVED"
+ },
+ "frame_padding": {
+  "lemma": {
+   "name": "frame_decode_safe",
+   "id": "frame_padding",
+   "src": [
+    "ngtcp2_pkt.c",
+    "ngtcp2_conv.c",
+    "ngtcp2_str.c",
+    "ngtcp2_cid.c",
+    "ngtcp2_vec.c",
+    "ngtcp2_buf.c",
+    "ngtcp2_mem.c",
+    "ngtcp2_pcg.c",
+    "ngtcp2_path.c",
+    "ngtcp2_addr.c"
+   ],
+   "unwind": 18,
+   "extra": [
+    "-DFTYPE_LO=0",
+    "-DFTYPE_HI=0",
+    "-DMAXLEN=16"
+   ]
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 11.72,
+   "failures": [],
+   "obligations": 7403,
+   "tail": ""
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 45.27,
+   "failures": [],
+   "obligations": 7403,
+   "tail": ""
+  },
+  "verdict": "PROVED"
+ },
+ "frame_ping": {
+  "lemma": {
+   "name": "frame_decode_safe",
+   "id": "frame_ping",
+   "src": [
+    "ngtcp2_pkt.c",
+    "ngtcp2_conv.c",
+    "ngtcp2_str.c",
+    "ngtcp2_cid.c",
+    "ngtcp2_vec.c",
+    "ngtcp2_buf.c",
+    "ngtcp2_mem.c",
+    "ngtcp2_pcg.c",
+    "ngtcp2_path.c",
+    "ngtcp2_addr.c"
+   ],
+   "unwind": 10,
+   "extra": [
+    "-DFTYPE_LO=1",
+    "-DFTYPE_HI=1",
+    "-DMAXLEN=8"
+   ]
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 26.56,
+   "failures": [],
+   "obligations": 7403,
+   "tail": ""
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 8.55,
+   "failures": [],
+   "obligations": 7403,
+   "tail": ""
+  },
+  "verdict": "PROVED"
+ }
+}
