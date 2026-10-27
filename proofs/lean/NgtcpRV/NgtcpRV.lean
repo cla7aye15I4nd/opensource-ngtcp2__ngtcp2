@@ -104,6 +104,7 @@ import NgtcpRV.ConnEcnCongestion
 import NgtcpRV.ConnVersion
 import NgtcpRV.ConnDupDetect
 import NgtcpRV.ConnPtoBound
+import NgtcpRV.ConnKeyUpdateGuard
 import NgtcpRV.DcidtrVerify
 import NgtcpRV.RingBuf
 import NgtcpRV.RangeAlg
