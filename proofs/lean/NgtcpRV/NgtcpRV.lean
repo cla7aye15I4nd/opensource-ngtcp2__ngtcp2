@@ -61,6 +61,7 @@ import NgtcpRV.ConnPpePadding
 import NgtcpRV.ConnHexEncode
 import NgtcpRV.ConnFrameAllow
 import NgtcpRV.ConnAckGap
+import NgtcpRV.ConnStatelessReset
 import NgtcpRV.DcidtrVerify
 import NgtcpRV.RingBuf
 import NgtcpRV.RangeAlg
