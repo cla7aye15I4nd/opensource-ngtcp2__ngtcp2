@@ -97,6 +97,7 @@ import NgtcpRV.ConnSetmem
 import NgtcpRV.ConnCpymem
 import NgtcpRV.ConnEcnCodepoint
 import NgtcpRV.ConnAckRangeCount
+import NgtcpRV.ConnGaptrPrefix
 import NgtcpRV.DcidtrVerify
 import NgtcpRV.RingBuf
 import NgtcpRV.RangeAlg
