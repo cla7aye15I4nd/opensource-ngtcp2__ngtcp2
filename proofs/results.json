@@ -1625,5 +1625,30 @@
    "tail": ""
   },
   "verdict": "PROVED"
+ },
+ "bbr_loss_probertt_no_ub": {
+  "lemma": {
+   "name": "bbr_loss_probertt_no_ub",
+   "src": [
+    "ngtcp2_pcg.c"
+   ],
+   "unwind": 3,
+   "timeout": 700
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 0.31,
+   "failures": [],
+   "obligations": 2837,
+   "tail": ""
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 0.33,
+   "failures": [],
+   "obligations": 2837,
+   "tail": ""
+  },
+  "verdict": "PROVED"
  }
 }
