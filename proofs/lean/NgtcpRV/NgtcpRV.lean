@@ -67,6 +67,7 @@ import NgtcpRV.ConnInFlight
 import NgtcpRV.ConnLossThreshold
 import NgtcpRV.ConnRttSmooth
 import NgtcpRV.ConnMinRtt
+import NgtcpRV.ConnRecovery
 import NgtcpRV.DcidtrVerify
 import NgtcpRV.RingBuf
 import NgtcpRV.RangeAlg
