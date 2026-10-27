@@ -134,6 +134,7 @@ import NgtcpRV.ConnMigration
 import NgtcpRV.ConnDatagramType
 import NgtcpRV.ConnCidEq
 import NgtcpRV.ConnErrorCode
+import NgtcpRV.ConnPreferredAddr
 import NgtcpRV.DcidtrVerify
 import NgtcpRV.RingBuf
 import NgtcpRV.RangeAlg
