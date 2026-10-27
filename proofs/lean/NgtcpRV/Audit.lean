@@ -23,3 +23,5 @@ open NgtcpRV
 #print axioms rangeEq_safe
 #print axioms rangeNotAfter_ok
 #print axioms verifyRsv_ok
+#print axioms isReserved_ok
+#print axioms isSupported_ok
