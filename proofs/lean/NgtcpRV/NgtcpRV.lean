@@ -109,6 +109,7 @@ import NgtcpRV.ConnTimer
 import NgtcpRV.ConnInitialPad
 import NgtcpRV.ConnTimerSelect
 import NgtcpRV.ConnRetryOnce
+import NgtcpRV.ConnScidSeq
 import NgtcpRV.DcidtrVerify
 import NgtcpRV.RingBuf
 import NgtcpRV.RangeAlg
