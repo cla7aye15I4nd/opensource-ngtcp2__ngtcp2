@@ -1330,5 +1330,13 @@
   ],
   "unwind": 3,
   "timeout": 400
+ },
+ {
+  "name": "str_rest_safe",
+  "src": [
+   "ngtcp2_str.c"
+  ],
+  "unwind": 8,
+  "timeout": 500
  }
 ]

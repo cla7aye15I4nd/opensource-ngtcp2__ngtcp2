@@ -2401,5 +2401,30 @@
    "tail": ""
   },
   "verdict": "PROVED"
+ },
+ "str_rest_safe": {
+  "lemma": {
+   "name": "str_rest_safe",
+   "src": [
+    "ngtcp2_str.c"
+   ],
+   "unwind": 8,
+   "timeout": 500
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 0.98,
+   "failures": [],
+   "obligations": 647,
+   "tail": ""
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 1.23,
+   "failures": [],
+   "obligations": 647,
+   "tail": ""
+  },
+  "verdict": "PROVED"
  }
 }
