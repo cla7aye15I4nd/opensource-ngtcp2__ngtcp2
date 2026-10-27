@@ -68,6 +68,7 @@ int ngtcp2_sockaddr_eq(const ngtcp2_sockaddr *a, const ngtcp2_sockaddr *b) {
   case NGTCP2_AF_INET6: {
     const ngtcp2_sockaddr_in6 *ai = (void *)a, *bi = (void *)b;
     return ai->sin6_port == bi->sin6_port &&
+           ai->sin6_scope_id == bi->sin6_scope_id &&
            memcmp(&ai->sin6_addr, &bi->sin6_addr, sizeof(ai->sin6_addr)) == 0;
   }
   default:
@@ -101,7 +102,8 @@ uint32_t ngtcp2_addr_cmp(const ngtcp2_addr *aa, const ngtcp2_addr *bb) {
   }
   case NGTCP2_AF_INET6: {
     const ngtcp2_sockaddr_in6 *ai = (void *)a, *bi = (void *)b;
-    if (memcmp(&ai->sin6_addr, &bi->sin6_addr, sizeof(ai->sin6_addr))) {
+    if (ai->sin6_scope_id != bi->sin6_scope_id ||
+        memcmp(&ai->sin6_addr, &bi->sin6_addr, sizeof(ai->sin6_addr))) {
       flags |= NGTCP2_ADDR_CMP_FLAG_ADDR;
     }
     if (ai->sin6_port != bi->sin6_port) {
