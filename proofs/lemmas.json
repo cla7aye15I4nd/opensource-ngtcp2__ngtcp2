@@ -1278,5 +1278,25 @@
   ],
   "unwind": 2,
   "timeout": 300
+ },
+ {
+  "name": "pkt_decode_vn_safe",
+  "src": [
+   "ngtcp2_pkt.c",
+   "ngtcp2_conv.c",
+   "ngtcp2_str.c"
+  ],
+  "unwind": 8,
+  "timeout": 500
+ },
+ {
+  "name": "pkt_sreset_retry_safe",
+  "src": [
+   "ngtcp2_pkt.c",
+   "ngtcp2_conv.c",
+   "ngtcp2_str.c"
+  ],
+  "unwind": 5,
+  "timeout": 600
  }
 ]

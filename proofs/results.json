@@ -2264,5 +2264,59 @@
    "tail": ""
   },
   "verdict": "PROVED"
+ },
+ "pkt_decode_vn_safe": {
+  "lemma": {
+   "name": "pkt_decode_vn_safe",
+   "src": [
+    "ngtcp2_pkt.c",
+    "ngtcp2_conv.c",
+    "ngtcp2_str.c"
+   ],
+   "unwind": 8,
+   "timeout": 500
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 0.42,
+   "failures": [],
+   "obligations": 5690,
+   "tail": ""
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 0.46,
+   "failures": [],
+   "obligations": 5690,
+   "tail": ""
+  },
+  "verdict": "PROVED"
+ },
+ "pkt_sreset_retry_safe": {
+  "lemma": {
+   "name": "pkt_sreset_retry_safe",
+   "src": [
+    "ngtcp2_pkt.c",
+    "ngtcp2_conv.c",
+    "ngtcp2_str.c"
+   ],
+   "unwind": 5,
+   "timeout": 600
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 0.75,
+   "failures": [],
+   "obligations": 5689,
+   "tail": ""
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 0.98,
+   "failures": [],
+   "obligations": 5689,
+   "tail": ""
+  },
+  "verdict": "PROVED"
  }
 }
