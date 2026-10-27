@@ -94,6 +94,7 @@ import NgtcpRV.ConnSpinBit
 import NgtcpRV.ConnPacing
 import NgtcpRV.ConnAckFreq
 import NgtcpRV.ConnSetmem
+import NgtcpRV.ConnCpymem
 import NgtcpRV.DcidtrVerify
 import NgtcpRV.RingBuf
 import NgtcpRV.RangeAlg
