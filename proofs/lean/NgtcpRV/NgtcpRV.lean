@@ -58,6 +58,7 @@ import NgtcpRV.ConnCidLen
 import NgtcpRV.ConnVersionNeg
 import NgtcpRV.ConnStreamId
 import NgtcpRV.ConnPpePadding
+import NgtcpRV.ConnHexEncode
 import NgtcpRV.DcidtrVerify
 import NgtcpRV.RingBuf
 import NgtcpRV.RangeAlg
