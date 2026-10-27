@@ -1042,5 +1042,17 @@
   "src": [],
   "unwind": 23,
   "timeout": 900
+ },
+ {
+  "name": "cc_cubic_events_no_ub",
+  "src": [],
+  "unwind": 3,
+  "timeout": 900
+ },
+ {
+  "name": "cc_compute_w_cubic_no_ub",
+  "src": [],
+  "unwind": 3,
+  "timeout": 600
  }
 ]

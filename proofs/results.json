@@ -1343,5 +1343,51 @@
    "tail": ""
   },
   "verdict": "PROVED"
+ },
+ "cc_cubic_events_no_ub": {
+  "lemma": {
+   "name": "cc_cubic_events_no_ub",
+   "src": [],
+   "unwind": 3,
+   "timeout": 900
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 0.23,
+   "failures": [],
+   "obligations": 1254,
+   "tail": ""
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 0.39,
+   "failures": [],
+   "obligations": 1254,
+   "tail": ""
+  },
+  "verdict": "PROVED"
+ },
+ "cc_compute_w_cubic_no_ub": {
+  "lemma": {
+   "name": "cc_compute_w_cubic_no_ub",
+   "src": [],
+   "unwind": 3,
+   "timeout": 600
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 0.08,
+   "failures": [],
+   "obligations": 1254,
+   "tail": ""
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 0.09,
+   "failures": [],
+   "obligations": 1254,
+   "tail": ""
+  },
+  "verdict": "PROVED"
  }
 }
