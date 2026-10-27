@@ -26,6 +26,7 @@ import NgtcpRV.ConnPktNum
 import NgtcpRV.ConnSendInv
 import NgtcpRV.ConnKeyUpdate
 import NgtcpRV.ConnStrmState
+import NgtcpRV.ConnPathVal
 import NgtcpRV.DcidtrVerify
 import NgtcpRV.RingBuf
 import NgtcpRV.RangeAlg
