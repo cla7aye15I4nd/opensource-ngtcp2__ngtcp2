@@ -135,6 +135,7 @@ import NgtcpRV.ConnDatagramType
 import NgtcpRV.ConnCidEq
 import NgtcpRV.ConnErrorCode
 import NgtcpRV.ConnPreferredAddr
+import NgtcpRV.ConnActiveDcid
 import NgtcpRV.DcidtrVerify
 import NgtcpRV.RingBuf
 import NgtcpRV.RangeAlg
