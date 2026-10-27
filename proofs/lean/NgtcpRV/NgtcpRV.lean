@@ -122,6 +122,7 @@ import NgtcpRV.ConnLossTime
 import NgtcpRV.ConnPersistentCong
 import NgtcpRV.ConnHandshakeDone
 import NgtcpRV.ConnAcktrBound
+import NgtcpRV.ConnStrmAcked
 import NgtcpRV.DcidtrVerify
 import NgtcpRV.RingBuf
 import NgtcpRV.RangeAlg
