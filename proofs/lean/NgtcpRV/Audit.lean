@@ -21,3 +21,4 @@ open NgtcpRV
 #print axioms rangeLen_ok
 #print axioms ordStreamId_ok
 #print axioms rangeEq_safe
+#print axioms rangeNotAfter_ok
