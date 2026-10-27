@@ -128,6 +128,7 @@ import NgtcpRV.ConnRecvLevelFlow
 import NgtcpRV.ConnRingbufResize
 import NgtcpRV.ConnMaxPktNum
 import NgtcpRV.ConnRetransmittable
+import NgtcpRV.ConnBlocked
 import NgtcpRV.DcidtrVerify
 import NgtcpRV.RingBuf
 import NgtcpRV.RangeAlg
