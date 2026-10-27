@@ -113,6 +113,7 @@ import NgtcpRV.ConnScidSeq
 import NgtcpRV.ConnVersionNegList
 import NgtcpRV.ConnPktAckEliciting
 import NgtcpRV.ConnTlsHandshake
+import NgtcpRV.ConnHandshakeChain
 import NgtcpRV.DcidtrVerify
 import NgtcpRV.RingBuf
 import NgtcpRV.RangeAlg
