@@ -44,6 +44,7 @@ import NgtcpRV.CryptoCmemeq
 import NgtcpRV.ConnComposite
 import NgtcpRV.ConnFullModel
 import NgtcpRV.ConnCryptoLevel
+import NgtcpRV.ConnVarintLen
 import NgtcpRV.DcidtrVerify
 import NgtcpRV.RingBuf
 import NgtcpRV.RangeAlg
