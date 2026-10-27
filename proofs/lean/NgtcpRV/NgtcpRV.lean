@@ -101,6 +101,7 @@ import NgtcpRV.ConnGaptrPrefix
 import NgtcpRV.ConnStrmSend
 import NgtcpRV.ConnStrmRecvGate
 import NgtcpRV.ConnEcnCongestion
+import NgtcpRV.ConnVersion
 import NgtcpRV.DcidtrVerify
 import NgtcpRV.RingBuf
 import NgtcpRV.RangeAlg
