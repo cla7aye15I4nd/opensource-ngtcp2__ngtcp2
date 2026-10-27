@@ -99,6 +99,7 @@ import NgtcpRV.ConnEcnCodepoint
 import NgtcpRV.ConnAckRangeCount
 import NgtcpRV.ConnGaptrPrefix
 import NgtcpRV.ConnStrmSend
+import NgtcpRV.ConnStrmRecvGate
 import NgtcpRV.DcidtrVerify
 import NgtcpRV.RingBuf
 import NgtcpRV.RangeAlg
