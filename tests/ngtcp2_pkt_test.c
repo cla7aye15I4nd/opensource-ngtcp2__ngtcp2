@@ -1862,6 +1862,13 @@ void test_ngtcp2_pkt_adjust_pkt_num(void) {
   assert_int64(250, ==, ngtcp2_pkt_adjust_pkt_num(255, 250, 1));
   assert_int64(8, ==, ngtcp2_pkt_adjust_pkt_num(50, 8, 1));
   assert_int64(0, ==, ngtcp2_pkt_adjust_pkt_num(-1, 0, 1));
+  /* The result may exceed NGTCP2_MAX_PKT_NUM; it is up to the caller
+     to reject it. */
+  assert_int64(0x400000003C00DFB7LL, ==,
+               ngtcp2_pkt_adjust_pkt_num(NGTCP2_MAX_PKT_NUM - 1, 0x3C00DFB7,
+                                         4));
+  assert_int64(0x400000000000007FLL, ==,
+               ngtcp2_pkt_adjust_pkt_num(NGTCP2_MAX_PKT_NUM - 1, 0x7F, 1));
 }
 
 void test_ngtcp2_pkt_validate_ack(void) {

@@ -2194,7 +2194,10 @@ int64_t ngtcp2_pkt_adjust_pkt_num(int64_t max_pkt_num, int64_t pkt_num,
   uint64_t cand = (expected & ~mask) | (uint64_t)pkt_num;
 
   if (cand + hwin <= expected) {
-    assert(cand <= NGTCP2_MAX_VARINT - win);
+    /* cand + win may exceed NGTCP2_MAX_PKT_NUM if max_pkt_num is
+       close to it.  The caller must reject such packet number.
+       cand < expected <= NGTCP2_MAX_PKT_NUM + 1 and win <= 1 << 32,
+       so this does not overflow int64_t. */
     return (int64_t)(cand + win);
   }
 
