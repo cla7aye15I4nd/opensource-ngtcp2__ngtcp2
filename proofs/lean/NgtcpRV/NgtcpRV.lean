@@ -43,6 +43,7 @@ import NgtcpRV.CryptoHeaderProt
 import NgtcpRV.CryptoCmemeq
 import NgtcpRV.ConnComposite
 import NgtcpRV.ConnFullModel
+import NgtcpRV.ConnSafety
 import NgtcpRV.ConnCryptoLevel
 import NgtcpRV.ConnVarintLen
 import NgtcpRV.PktNumDecode
