@@ -57,7 +57,6 @@ import NgtcpRV.ConvRoundtrip1632
 import NgtcpRV.VarintRoundtrip
 import NgtcpRV.ConnCidLen
 import NgtcpRV.ConnVersion
-import NgtcpRV.ConnDupDetectNeg
 import NgtcpRV.ConnStreamId
 import NgtcpRV.ConnPpePadding
 import NgtcpRV.ConnHexEncode
