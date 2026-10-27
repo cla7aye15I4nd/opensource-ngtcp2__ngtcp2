@@ -1016,5 +1016,19 @@
   ],
   "unwind": 3,
   "timeout": 900
+ },
+ {
+  "name": "map_find_safe",
+  "src": [
+   "ngtcp2_map.c"
+  ],
+  "unwind": 11,
+  "timeout": 900
+ },
+ {
+  "name": "cc_reno_on_acked_no_ub",
+  "src": [],
+  "unwind": 3,
+  "timeout": 900
  }
 ]
