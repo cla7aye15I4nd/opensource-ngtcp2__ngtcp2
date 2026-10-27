@@ -134,7 +134,7 @@ proofs (`AdjustPktNum`, `RangeInit`, `RangeIntersect`, `PutUvarint`, …) that
 verify the *compiled* object code of leaf functions — strictly stronger than a
 C-level proof, since they assume nothing about the compiler.
 
-### Full deductive module index (~79 modules, all kernel-checked)
+### Full deductive module index (~100 modules, all kernel-checked)
 
 - **Data-structure primitives**: `RangeAlg`, `RingBuf`, `KslSearch`, `KslSplit`,
   `KslSplitSorted` (ksl: within-block search for all sizes + split memory-safety
@@ -178,7 +178,7 @@ C-level proof, since they assume nothing about the compiler.
 - **Transport-parameter validation**: `ConnActiveCidLimit`, `ConnMaxStreams`,
   `ConnMaxUdpPayload`, `ConnMaxAckDelay`.
 
-(~79 deductive modules in total; this index names the principal ones.)
+(~100 deductive modules in total; this index names the principal ones.)
 
 Each module's top theorem `#print axioms` depends only on the standard
 `[propext, Classical.choice, Quot.sound]` (several on fewer), so the elaborator's
