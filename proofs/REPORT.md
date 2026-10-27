@@ -113,3 +113,13 @@ the remaining lemmas finish.
 * Only the listed functions are covered, not the connection state machine
   (`ngtcp2_conn.c`), congestion control or crypto.
 * The configuration models a little-endian Linux host (`include/config.h`).
+
+## 2026-10-27 — Encoder + vec layer (formal verification, no fuzz)
+Added 13 dual-backend (CBMC-SAT + Z3) sound proofs, all PROVED, 0 counterexamples:
+- conv_put_uvarint_len_match (foundational: put_uvarint advances exactly put_uvarintlen(n) for all n<2^62)
+- pkt_encode_{stream,ack,crypto,new_connection_id,new_token,datagram,connection_close}_frame_safe
+- pkt_encode_hd_long_safe, pkt_encode_hd_short_safe
+- vec_len_varint_safe, vec_copy_at_most_safe, vec_split_at_safe
+Property for encoders: return value never exceeds outlen (no OOB write) + internal length invariant assert holds; variable parts bounded (datacnt/rangecnt<=2, CID<=20, token/reason small).
+Milestone: the ENTIRE stateless packet codec is now formally proved on BOTH decode and encode sides.
+Manual check (not a bug): rtb.c:833 num_lost_pkts-num_lost_ignore_pkts is invariant-protected (ignore is a strict subset of lost; ++num_lost_pkts always runs, ++num_lost_ignore_pkts only in PMTUD_PROBE|SKIP sub-branch) — no underflow.

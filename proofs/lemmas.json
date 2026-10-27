@@ -685,5 +685,336 @@
   "extra": [
    "-DNOPS=6"
   ]
+ },
+ {
+  "name": "conv_put_uvarint_len_match",
+  "src": [
+   "ngtcp2_conv.c",
+   "ngtcp2_str.c"
+  ],
+  "unwind": 2,
+  "timeout": 600
+ },
+ {
+  "name": "pkt_encode_stream_frame_safe",
+  "src": [
+   "ngtcp2_pkt.c",
+   "ngtcp2_conv.c",
+   "ngtcp2_str.c"
+  ],
+  "unwind": 4,
+  "timeout": 1200
+ },
+ {
+  "name": "pkt_encode_ack_frame_safe",
+  "src": [
+   "ngtcp2_pkt.c",
+   "ngtcp2_conv.c",
+   "ngtcp2_str.c"
+  ],
+  "unwind": 4,
+  "timeout": 1200
+ },
+ {
+  "name": "pkt_encode_crypto_frame_safe",
+  "src": [
+   "ngtcp2_pkt.c",
+   "ngtcp2_conv.c",
+   "ngtcp2_str.c"
+  ],
+  "unwind": 4,
+  "timeout": 1200
+ },
+ {
+  "name": "pkt_encode_new_connection_id_frame_safe",
+  "src": [
+   "ngtcp2_pkt.c",
+   "ngtcp2_conv.c",
+   "ngtcp2_str.c"
+  ],
+  "unwind": 4,
+  "timeout": 1200
+ },
+ {
+  "name": "pkt_encode_new_token_frame_safe",
+  "src": [
+   "ngtcp2_pkt.c",
+   "ngtcp2_conv.c",
+   "ngtcp2_str.c"
+  ],
+  "unwind": 4,
+  "timeout": 1200
+ },
+ {
+  "name": "pkt_encode_datagram_frame_safe",
+  "src": [
+   "ngtcp2_pkt.c",
+   "ngtcp2_conv.c",
+   "ngtcp2_str.c",
+   "ngtcp2_vec.c"
+  ],
+  "unwind": 4,
+  "timeout": 1200
+ },
+ {
+  "name": "pkt_encode_connection_close_frame_safe",
+  "src": [
+   "ngtcp2_pkt.c",
+   "ngtcp2_conv.c",
+   "ngtcp2_str.c"
+  ],
+  "unwind": 4,
+  "timeout": 1200
+ },
+ {
+  "name": "vec_len_varint_safe",
+  "src": [
+   "ngtcp2_vec.c",
+   "ngtcp2_conv.c",
+   "ngtcp2_str.c"
+  ],
+  "unwind": 5,
+  "timeout": 900
+ },
+ {
+  "name": "vec_copy_at_most_safe",
+  "src": [
+   "ngtcp2_vec.c"
+  ],
+  "unwind": 5,
+  "timeout": 900
+ },
+ {
+  "name": "vec_split_at_safe",
+  "src": [
+   "ngtcp2_vec.c"
+  ],
+  "unwind": 5,
+  "timeout": 900
+ },
+ {
+  "name": "pkt_encode_hd_long_safe",
+  "src": [
+   "ngtcp2_pkt.c",
+   "ngtcp2_conv.c",
+   "ngtcp2_str.c"
+  ],
+  "unwind": 5,
+  "timeout": 1200
+ },
+ {
+  "name": "pkt_encode_hd_short_safe",
+  "src": [
+   "ngtcp2_pkt.c",
+   "ngtcp2_conv.c",
+   "ngtcp2_str.c"
+  ],
+  "unwind": 5,
+  "timeout": 1200
+ },
+ {
+  "name": "pkt_encode_fixed_frames_safe",
+  "src": [
+   "ngtcp2_pkt.c",
+   "ngtcp2_conv.c",
+   "ngtcp2_str.c"
+  ],
+  "unwind": 3,
+  "timeout": 1200
+ },
+ {
+  "name": "pkt_write_version_negotiation_safe",
+  "src": [
+   "ngtcp2_pkt.c",
+   "ngtcp2_conv.c",
+   "ngtcp2_str.c"
+  ],
+  "unwind": 5,
+  "timeout": 1200
+ },
+ {
+  "name": "pkt_write_stateless_reset_safe",
+  "src": [
+   "ngtcp2_pkt.c",
+   "ngtcp2_conv.c",
+   "ngtcp2_str.c"
+  ],
+  "unwind": 5,
+  "timeout": 1200
+ },
+ {
+  "name": "pq_pop_safe",
+  "src": [
+   "ngtcp2_pq.c"
+  ],
+  "unwind": 6,
+  "timeout": 1200
+ },
+ {
+  "name": "pq_remove_safe",
+  "src": [
+   "ngtcp2_pq.c"
+  ],
+  "unwind": 6,
+  "timeout": 1200
+ },
+ {
+  "name": "str_encode_uintlen_correct",
+  "src": [
+   "ngtcp2_str.c"
+  ],
+  "unwind": 22,
+  "timeout": 900
+ },
+ {
+  "name": "str_encode_uint_safe",
+  "src": [
+   "ngtcp2_str.c"
+  ],
+  "unwind": 22,
+  "timeout": 900
+ },
+ {
+  "name": "str_encode_uint_hex_match",
+  "src": [
+   "ngtcp2_str.c"
+  ],
+  "unwind": 20,
+  "timeout": 900
+ },
+ {
+  "name": "str_mem_safe",
+  "src": [
+   "ngtcp2_str.c"
+  ],
+  "unwind": 8,
+  "timeout": 900
+ },
+ {
+  "name": "range_ops_safe",
+  "src": [
+   "ngtcp2_range.c"
+  ],
+  "unwind": 2,
+  "timeout": 600
+ },
+ {
+  "name": "conv_int_roundtrip",
+  "src": [
+   "ngtcp2_conv.c",
+   "ngtcp2_str.c"
+  ],
+  "unwind": 2,
+  "timeout": 600
+ },
+ {
+  "name": "ksl_uint64_less_search_safe",
+  "src": [
+   "ngtcp2_ksl.c"
+  ],
+  "unwind": 33,
+  "timeout": 1200
+ },
+ {
+  "name": "ksl_int64_greater_search_safe",
+  "src": [
+   "ngtcp2_ksl.c"
+  ],
+  "unwind": 33,
+  "timeout": 1200
+ },
+ {
+  "name": "ksl_range_search_safe",
+  "src": [
+   "ngtcp2_ksl.c"
+  ],
+  "unwind": 33,
+  "timeout": 1200
+ },
+ {
+  "name": "cid_compare_safe",
+  "src": [
+   "ngtcp2_cid.c"
+  ],
+  "unwind": 22,
+  "timeout": 900
+ },
+ {
+  "name": "sockaddr_eq_safe",
+  "src": [
+   "ngtcp2_addr.c"
+  ],
+  "unwind": 22,
+  "timeout": 900
+ },
+ {
+  "name": "ratelim_drain_safe",
+  "src": [
+   "ngtcp2_ratelim.c"
+  ],
+  "unwind": 3,
+  "timeout": 900
+ },
+ {
+  "name": "buf_safe",
+  "src": [
+   "ngtcp2_buf.c"
+  ],
+  "unwind": 3,
+  "timeout": 900
+ },
+ {
+  "name": "pmtud_probe_safe",
+  "src": [
+   "ngtcp2_pmtud.c"
+  ],
+  "unwind": 6,
+  "timeout": 600
+ },
+ {
+  "name": "pmtud_expiry_safe",
+  "src": [
+   "ngtcp2_pmtud.c"
+  ],
+  "unwind": 6,
+  "timeout": 600
+ },
+ {
+  "name": "tp_primitives_safe",
+  "src": [
+   "ngtcp2_conv.c",
+   "ngtcp2_str.c",
+   "ngtcp2_cid.c"
+  ],
+  "unwind": 11,
+  "timeout": 900
+ },
+ {
+  "name": "rst_no_ub",
+  "src": [
+   "ngtcp2_rst.c"
+  ],
+  "unwind": 2,
+  "timeout": 300
+ },
+ {
+  "name": "ppe_padding_safe",
+  "src": [
+   "ngtcp2_ppe.c",
+   "ngtcp2_buf.c",
+   "ngtcp2_str.c"
+  ],
+  "unwind": 3,
+  "timeout": 900
+ },
+ {
+  "name": "ppe_dgram_padding_safe",
+  "src": [
+   "ngtcp2_ppe.c",
+   "ngtcp2_buf.c",
+   "ngtcp2_str.c"
+  ],
+  "unwind": 3,
+  "timeout": 900
  }
 ]

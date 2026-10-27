@@ -261,5 +261,993 @@
    "tail": ""
   },
   "verdict": "PROVED"
+ },
+ "conv_put_uvarint_len_match": {
+  "lemma": {
+   "name": "conv_put_uvarint_len_match",
+   "src": [
+    "ngtcp2_conv.c",
+    "ngtcp2_str.c"
+   ],
+   "unwind": 2,
+   "timeout": 600
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 0.2,
+   "failures": [],
+   "obligations": 1064,
+   "tail": ""
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 0.21,
+   "failures": [],
+   "obligations": 1064,
+   "tail": ""
+  },
+  "verdict": "PROVED"
+ },
+ "pkt_encode_stream_frame_safe": {
+  "lemma": {
+   "name": "pkt_encode_stream_frame_safe",
+   "src": [
+    "ngtcp2_pkt.c",
+    "ngtcp2_conv.c",
+    "ngtcp2_str.c"
+   ],
+   "unwind": 4,
+   "timeout": 1200
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 0.57,
+   "failures": [],
+   "obligations": 5687,
+   "tail": ""
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 1.19,
+   "failures": [],
+   "obligations": 5687,
+   "tail": ""
+  },
+  "verdict": "PROVED"
+ },
+ "pkt_encode_ack_frame_safe": {
+  "lemma": {
+   "name": "pkt_encode_ack_frame_safe",
+   "src": [
+    "ngtcp2_pkt.c",
+    "ngtcp2_conv.c",
+    "ngtcp2_str.c"
+   ],
+   "unwind": 4,
+   "timeout": 1200
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 1.12,
+   "failures": [],
+   "obligations": 5686,
+   "tail": ""
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 29.7,
+   "failures": [],
+   "obligations": 5686,
+   "tail": ""
+  },
+  "verdict": "PROVED"
+ },
+ "pkt_encode_crypto_frame_safe": {
+  "lemma": {
+   "name": "pkt_encode_crypto_frame_safe",
+   "src": [
+    "ngtcp2_pkt.c",
+    "ngtcp2_conv.c",
+    "ngtcp2_str.c"
+   ],
+   "unwind": 4,
+   "timeout": 1200
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 0.51,
+   "failures": [],
+   "obligations": 5687,
+   "tail": ""
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 0.68,
+   "failures": [],
+   "obligations": 5687,
+   "tail": ""
+  },
+  "verdict": "PROVED"
+ },
+ "pkt_encode_new_connection_id_frame_safe": {
+  "lemma": {
+   "name": "pkt_encode_new_connection_id_frame_safe",
+   "src": [
+    "ngtcp2_pkt.c",
+    "ngtcp2_conv.c",
+    "ngtcp2_str.c"
+   ],
+   "unwind": 4,
+   "timeout": 1200
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 0.48,
+   "failures": [],
+   "obligations": 5682,
+   "tail": ""
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 0.53,
+   "failures": [],
+   "obligations": 5682,
+   "tail": ""
+  },
+  "verdict": "PROVED"
+ },
+ "pkt_encode_new_token_frame_safe": {
+  "lemma": {
+   "name": "pkt_encode_new_token_frame_safe",
+   "src": [
+    "ngtcp2_pkt.c",
+    "ngtcp2_conv.c",
+    "ngtcp2_str.c"
+   ],
+   "unwind": 4,
+   "timeout": 1200
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 0.48,
+   "failures": [],
+   "obligations": 5682,
+   "tail": ""
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 0.47,
+   "failures": [],
+   "obligations": 5682,
+   "tail": ""
+  },
+  "verdict": "PROVED"
+ },
+ "pkt_encode_datagram_frame_safe": {
+  "lemma": {
+   "name": "pkt_encode_datagram_frame_safe",
+   "src": [
+    "ngtcp2_pkt.c",
+    "ngtcp2_conv.c",
+    "ngtcp2_str.c",
+    "ngtcp2_vec.c"
+   ],
+   "unwind": 4,
+   "timeout": 1200
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 0.56,
+   "failures": [],
+   "obligations": 6365,
+   "tail": ""
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 0.7,
+   "failures": [],
+   "obligations": 6365,
+   "tail": ""
+  },
+  "verdict": "PROVED"
+ },
+ "pkt_encode_connection_close_frame_safe": {
+  "lemma": {
+   "name": "pkt_encode_connection_close_frame_safe",
+   "src": [
+    "ngtcp2_pkt.c",
+    "ngtcp2_conv.c",
+    "ngtcp2_str.c"
+   ],
+   "unwind": 4,
+   "timeout": 1200
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 0.5,
+   "failures": [],
+   "obligations": 5682,
+   "tail": ""
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 0.53,
+   "failures": [],
+   "obligations": 5682,
+   "tail": ""
+  },
+  "verdict": "PROVED"
+ },
+ "vec_len_varint_safe": {
+  "lemma": {
+   "name": "vec_len_varint_safe",
+   "src": [
+    "ngtcp2_vec.c",
+    "ngtcp2_conv.c",
+    "ngtcp2_str.c"
+   ],
+   "unwind": 5,
+   "timeout": 900
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 0.23,
+   "failures": [],
+   "obligations": 1340,
+   "tail": ""
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 0.91,
+   "failures": [],
+   "obligations": 1340,
+   "tail": ""
+  },
+  "verdict": "PROVED"
+ },
+ "vec_split_at_safe": {
+  "lemma": {
+   "name": "vec_split_at_safe",
+   "src": [
+    "ngtcp2_vec.c"
+   ],
+   "unwind": 5,
+   "timeout": 900
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 0.12,
+   "failures": [],
+   "obligations": 616,
+   "tail": ""
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 0.12,
+   "failures": [],
+   "obligations": 616,
+   "tail": ""
+  },
+  "verdict": "PROVED"
+ },
+ "vec_copy_at_most_safe": {
+  "lemma": {
+   "name": "vec_copy_at_most_safe",
+   "src": [
+    "ngtcp2_vec.c"
+   ],
+   "unwind": 5,
+   "timeout": 900
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 2.76,
+   "failures": [],
+   "obligations": 616,
+   "tail": ""
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 5.23,
+   "failures": [],
+   "obligations": 616,
+   "tail": ""
+  },
+  "verdict": "PROVED"
+ },
+ "pkt_encode_hd_long_safe": {
+  "lemma": {
+   "name": "pkt_encode_hd_long_safe",
+   "src": [
+    "ngtcp2_pkt.c",
+    "ngtcp2_conv.c",
+    "ngtcp2_str.c"
+   ],
+   "unwind": 5,
+   "timeout": 1200
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 0.59,
+   "failures": [],
+   "obligations": 5682,
+   "tail": ""
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 0.67,
+   "failures": [],
+   "obligations": 5682,
+   "tail": ""
+  },
+  "verdict": "PROVED"
+ },
+ "pkt_encode_hd_short_safe": {
+  "lemma": {
+   "name": "pkt_encode_hd_short_safe",
+   "src": [
+    "ngtcp2_pkt.c",
+    "ngtcp2_conv.c",
+    "ngtcp2_str.c"
+   ],
+   "unwind": 5,
+   "timeout": 1200
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 0.41,
+   "failures": [],
+   "obligations": 5682,
+   "tail": ""
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 0.44,
+   "failures": [],
+   "obligations": 5682,
+   "tail": ""
+  },
+  "verdict": "PROVED"
+ },
+ "pkt_encode_fixed_frames_safe": {
+  "lemma": {
+   "name": "pkt_encode_fixed_frames_safe",
+   "src": [
+    "ngtcp2_pkt.c",
+    "ngtcp2_conv.c",
+    "ngtcp2_str.c"
+   ],
+   "unwind": 3,
+   "timeout": 1200
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 0.81,
+   "failures": [],
+   "obligations": 5758,
+   "tail": ""
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 0.96,
+   "failures": [],
+   "obligations": 5758,
+   "tail": ""
+  },
+  "verdict": "PROVED"
+ },
+ "pkt_write_version_negotiation_safe": {
+  "lemma": {
+   "name": "pkt_write_version_negotiation_safe",
+   "src": [
+    "ngtcp2_pkt.c",
+    "ngtcp2_conv.c",
+    "ngtcp2_str.c"
+   ],
+   "unwind": 5,
+   "timeout": 1200
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 0.47,
+   "failures": [],
+   "obligations": 5701,
+   "tail": ""
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 0.49,
+   "failures": [],
+   "obligations": 5701,
+   "tail": ""
+  },
+  "verdict": "PROVED"
+ },
+ "pkt_write_stateless_reset_safe": {
+  "lemma": {
+   "name": "pkt_write_stateless_reset_safe",
+   "src": [
+    "ngtcp2_pkt.c",
+    "ngtcp2_conv.c",
+    "ngtcp2_str.c"
+   ],
+   "unwind": 5,
+   "timeout": 1200
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 0.39,
+   "failures": [],
+   "obligations": 5688,
+   "tail": ""
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 0.4,
+   "failures": [],
+   "obligations": 5688,
+   "tail": ""
+  },
+  "verdict": "PROVED"
+ },
+ "pq_pop_safe": {
+  "lemma": {
+   "name": "pq_pop_safe",
+   "src": [
+    "ngtcp2_pq.c"
+   ],
+   "unwind": 6,
+   "timeout": 1200
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 2.95,
+   "failures": [],
+   "obligations": 585,
+   "tail": ""
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 8.43,
+   "failures": [],
+   "obligations": 585,
+   "tail": ""
+  },
+  "verdict": "PROVED"
+ },
+ "pq_remove_safe": {
+  "lemma": {
+   "name": "pq_remove_safe",
+   "src": [
+    "ngtcp2_pq.c"
+   ],
+   "unwind": 6,
+   "timeout": 1200
+  },
+  "sat": {
+   "status": "OOM",
+   "secs": 3.88,
+   "failures": [],
+   "obligations": 0,
+   "tail": "pe-checking unreachable\nGenerating GOTO Program\nAdding CPROVER library (x86_64)\nRemoval of function pointers and virtual functions\nGeneric Property Instrumentation\nStarting Bounded Model Checking\nPassing problem to propositional reduction\nconverting SSA\nRunning propositional reduction\nOut of memory\n"
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 1.72,
+   "failures": [],
+   "obligations": 586,
+   "tail": ""
+  },
+  "verdict": "INCOMPLETE"
+ },
+ "str_encode_uintlen_correct": {
+  "lemma": {
+   "name": "str_encode_uintlen_correct",
+   "src": [
+    "ngtcp2_str.c"
+   ],
+   "unwind": 22,
+   "timeout": 900
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 1.66,
+   "failures": [],
+   "obligations": 511,
+   "tail": ""
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 1.85,
+   "failures": [],
+   "obligations": 511,
+   "tail": ""
+  },
+  "verdict": "PROVED"
+ },
+ "str_encode_uint_hex_match": {
+  "lemma": {
+   "name": "str_encode_uint_hex_match",
+   "src": [
+    "ngtcp2_str.c"
+   ],
+   "unwind": 20,
+   "timeout": 900
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 0.61,
+   "failures": [],
+   "obligations": 527,
+   "tail": ""
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 0.23,
+   "failures": [],
+   "obligations": 527,
+   "tail": ""
+  },
+  "verdict": "PROVED"
+ },
+ "str_mem_safe": {
+  "lemma": {
+   "name": "str_mem_safe",
+   "src": [
+    "ngtcp2_str.c"
+   ],
+   "unwind": 8,
+   "timeout": 900
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 0.2,
+   "failures": [],
+   "obligations": 569,
+   "tail": ""
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 0.19,
+   "failures": [],
+   "obligations": 569,
+   "tail": ""
+  },
+  "verdict": "PROVED"
+ },
+ "str_encode_uint_safe": {
+  "lemma": {
+   "name": "str_encode_uint_safe",
+   "src": [
+    "ngtcp2_str.c"
+   ],
+   "unwind": 22,
+   "timeout": 900
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 2.49,
+   "failures": [],
+   "obligations": 525,
+   "tail": ""
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 31.36,
+   "failures": [],
+   "obligations": 525,
+   "tail": ""
+  },
+  "verdict": "PROVED"
+ },
+ "range_ops_safe": {
+  "lemma": {
+   "name": "range_ops_safe",
+   "src": [
+    "ngtcp2_range.c"
+   ],
+   "unwind": 2,
+   "timeout": 600
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 0.08,
+   "failures": [],
+   "obligations": 119,
+   "tail": ""
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 0.15,
+   "failures": [],
+   "obligations": 119,
+   "tail": ""
+  },
+  "verdict": "PROVED"
+ },
+ "conv_int_roundtrip": {
+  "lemma": {
+   "name": "conv_int_roundtrip",
+   "src": [
+    "ngtcp2_conv.c",
+    "ngtcp2_str.c"
+   ],
+   "unwind": 2,
+   "timeout": 600
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 0.21,
+   "failures": [],
+   "obligations": 1065,
+   "tail": ""
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 0.23,
+   "failures": [],
+   "obligations": 1065,
+   "tail": ""
+  },
+  "verdict": "PROVED"
+ },
+ "ringbuf_model": {
+  "lemma": {
+   "name": "ringbuf_model",
+   "src": [
+    "ngtcp2_ringbuf.c",
+    "ngtcp2_mem.c"
+   ],
+   "unwind": 8,
+   "extra": [
+    "-DNOPS=6"
+   ]
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 2.4,
+   "failures": [],
+   "obligations": 434,
+   "tail": ""
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 9.9,
+   "failures": [],
+   "obligations": 434,
+   "tail": ""
+  },
+  "verdict": "PROVED"
+ },
+ "ksl_uint64_less_search_safe": {
+  "lemma": {
+   "name": "ksl_uint64_less_search_safe",
+   "src": [
+    "ngtcp2_ksl.c"
+   ],
+   "unwind": 33,
+   "timeout": 1200
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 0.24,
+   "failures": [],
+   "obligations": 1800,
+   "tail": ""
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 0.26,
+   "failures": [],
+   "obligations": 1800,
+   "tail": ""
+  },
+  "verdict": "PROVED"
+ },
+ "ksl_int64_greater_search_safe": {
+  "lemma": {
+   "name": "ksl_int64_greater_search_safe",
+   "src": [
+    "ngtcp2_ksl.c"
+   ],
+   "unwind": 33,
+   "timeout": 1200
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 0.22,
+   "failures": [],
+   "obligations": 1800,
+   "tail": ""
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 0.26,
+   "failures": [],
+   "obligations": 1800,
+   "tail": ""
+  },
+  "verdict": "PROVED"
+ },
+ "ksl_range_search_safe": {
+  "lemma": {
+   "name": "ksl_range_search_safe",
+   "src": [
+    "ngtcp2_ksl.c"
+   ],
+   "unwind": 33,
+   "timeout": 1200
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 0.23,
+   "failures": [],
+   "obligations": 1800,
+   "tail": ""
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 0.25,
+   "failures": [],
+   "obligations": 1800,
+   "tail": ""
+  },
+  "verdict": "PROVED"
+ },
+ "sockaddr_eq_safe": {
+  "lemma": {
+   "name": "sockaddr_eq_safe",
+   "src": [
+    "ngtcp2_addr.c"
+   ],
+   "unwind": 22,
+   "timeout": 900
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 0.25,
+   "failures": [],
+   "obligations": 194,
+   "tail": ""
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 0.2,
+   "failures": [],
+   "obligations": 194,
+   "tail": ""
+  },
+  "verdict": "PROVED"
+ },
+ "cid_compare_safe": {
+  "lemma": {
+   "name": "cid_compare_safe",
+   "src": [
+    "ngtcp2_cid.c"
+   ],
+   "unwind": 22,
+   "timeout": 900
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 0.31,
+   "failures": [],
+   "obligations": 383,
+   "tail": ""
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 1.14,
+   "failures": [],
+   "obligations": 383,
+   "tail": ""
+  },
+  "verdict": "PROVED"
+ },
+ "buf_safe": {
+  "lemma": {
+   "name": "buf_safe",
+   "src": [
+    "ngtcp2_buf.c"
+   ],
+   "unwind": 3,
+   "timeout": 900
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 0.11,
+   "failures": [],
+   "obligations": 168,
+   "tail": ""
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 0.12,
+   "failures": [],
+   "obligations": 168,
+   "tail": ""
+  },
+  "verdict": "PROVED"
+ },
+ "ratelim_drain_safe": {
+  "lemma": {
+   "name": "ratelim_drain_safe",
+   "src": [
+    "ngtcp2_ratelim.c"
+   ],
+   "unwind": 3,
+   "timeout": 900
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 0.79,
+   "failures": [],
+   "obligations": 96,
+   "tail": ""
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 62.2,
+   "failures": [],
+   "obligations": 96,
+   "tail": ""
+  },
+  "verdict": "PROVED"
+ },
+ "pmtud_probe_safe": {
+  "lemma": {
+   "name": "pmtud_probe_safe",
+   "src": [
+    "ngtcp2_pmtud.c"
+   ],
+   "unwind": 6,
+   "timeout": 600
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 0.14,
+   "failures": [],
+   "obligations": 435,
+   "tail": ""
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 0.17,
+   "failures": [],
+   "obligations": 435,
+   "tail": ""
+  },
+  "verdict": "PROVED"
+ },
+ "pmtud_expiry_safe": {
+  "lemma": {
+   "name": "pmtud_expiry_safe",
+   "src": [
+    "ngtcp2_pmtud.c"
+   ],
+   "unwind": 6,
+   "timeout": 600
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 0.15,
+   "failures": [],
+   "obligations": 435,
+   "tail": ""
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 0.17,
+   "failures": [],
+   "obligations": 435,
+   "tail": ""
+  },
+  "verdict": "PROVED"
+ },
+ "tp_primitives_safe": {
+  "lemma": {
+   "name": "tp_primitives_safe",
+   "src": [
+    "ngtcp2_conv.c",
+    "ngtcp2_str.c",
+    "ngtcp2_cid.c"
+   ],
+   "unwind": 11,
+   "timeout": 900
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 0.42,
+   "failures": [],
+   "obligations": 2487,
+   "tail": ""
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 0.44,
+   "failures": [],
+   "obligations": 2487,
+   "tail": ""
+  },
+  "verdict": "PROVED"
+ },
+ "rst_no_ub": {
+  "lemma": {
+   "name": "rst_no_ub",
+   "src": [
+    "ngtcp2_rst.c"
+   ],
+   "unwind": 2,
+   "timeout": 300
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 0.09,
+   "failures": [],
+   "obligations": 406,
+   "tail": ""
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 0.09,
+   "failures": [],
+   "obligations": 406,
+   "tail": ""
+  },
+  "verdict": "PROVED"
+ },
+ "ppe_padding_safe": {
+  "lemma": {
+   "name": "ppe_padding_safe",
+   "src": [
+    "ngtcp2_ppe.c",
+    "ngtcp2_buf.c",
+    "ngtcp2_str.c"
+   ],
+   "unwind": 3,
+   "timeout": 900
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 0.36,
+   "failures": [],
+   "obligations": 1342,
+   "tail": ""
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 0.56,
+   "failures": [],
+   "obligations": 1342,
+   "tail": ""
+  },
+  "verdict": "PROVED"
+ },
+ "ppe_dgram_padding_safe": {
+  "lemma": {
+   "name": "ppe_dgram_padding_safe",
+   "src": [
+    "ngtcp2_ppe.c",
+    "ngtcp2_buf.c",
+    "ngtcp2_str.c"
+   ],
+   "unwind": 3,
+   "timeout": 900
+  },
+  "sat": {
+   "status": "PROVED",
+   "secs": 0.59,
+   "failures": [],
+   "obligations": 1341,
+   "tail": ""
+  },
+  "z3": {
+   "status": "PROVED",
+   "secs": 1.97,
+   "failures": [],
+   "obligations": 1341,
+   "tail": ""
+  },
+  "verdict": "PROVED"
  }
 }

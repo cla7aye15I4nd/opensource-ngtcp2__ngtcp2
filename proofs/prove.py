@@ -20,7 +20,7 @@ SRC = next(p for p in (os.path.join(ROOT, "..", "lib"),
 FLAGS = ["--bounds-check", "--pointer-check", "--signed-overflow-check",
          "--pointer-overflow-check", "--undefined-shift-check",
          "--div-by-zero-check", "--unwinding-assertions", "--object-bits", "12"]
-BACKENDS = {"sat": ["--sat-solver", "cadical", "--slice-formula"], "z3": ["--z3", "--slice-formula"]}
+BACKENDS = {"sat": ["--external-sat-solver", "cadical", "--slice-formula"], "z3": ["--z3", "--slice-formula"]}
 
 def key(l):
     return l.get("id", l["name"])
