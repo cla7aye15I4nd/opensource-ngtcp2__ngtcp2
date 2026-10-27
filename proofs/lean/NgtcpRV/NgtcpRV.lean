@@ -133,6 +133,7 @@ import NgtcpRV.ConnStreamsBlocked
 import NgtcpRV.ConnMigration
 import NgtcpRV.ConnDatagramType
 import NgtcpRV.ConnCidEq
+import NgtcpRV.ConnErrorCode
 import NgtcpRV.DcidtrVerify
 import NgtcpRV.RingBuf
 import NgtcpRV.RangeAlg
