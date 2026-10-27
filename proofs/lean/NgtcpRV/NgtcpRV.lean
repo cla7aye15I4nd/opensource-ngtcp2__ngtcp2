@@ -15,6 +15,7 @@ import NgtcpRV.GetTypeLong
 import NgtcpRV.VecLenVarint
 import NgtcpRV.KslSearch
 import NgtcpRV.KslSplit
+import NgtcpRV.KslSplitSorted
 import NgtcpRV.BallocGet
 import NgtcpRV.ObjallocGet
 import NgtcpRV.ConnFlowControl
