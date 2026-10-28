@@ -52,6 +52,7 @@ import NgtcpRV.BbrBdp
 import NgtcpRV.BbrQuantBudget
 import NgtcpRV.BbrWindowFilter
 import NgtcpRV.RateSample
+import NgtcpRV.PmtudProbe
 import NgtcpRV.StreamOffset
 import NgtcpRV.ConnEcn
 import NgtcpRV.ConnPtoBackoff
