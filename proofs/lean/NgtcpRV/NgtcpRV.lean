@@ -63,6 +63,7 @@ import NgtcpRV.HexLen
 import NgtcpRV.PriorityQueue
 import NgtcpRV.Pcg
 import NgtcpRV.PathEq
+import NgtcpRV.ObjectPool
 import NgtcpRV.StreamOffset
 import NgtcpRV.ConnEcn
 import NgtcpRV.ConnPtoBackoff
