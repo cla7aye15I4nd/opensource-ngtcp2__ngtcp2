@@ -179,3 +179,4 @@ import NgtcpRV.IdleTimeout
 import NgtcpRV.VarintLen
 import NgtcpRV.MapIndex
 import NgtcpRV.RenoAck
+import NgtcpRV.WindowUpdate
