@@ -184,3 +184,4 @@ import NgtcpRV.KeepAlive
 import NgtcpRV.CubicWindow
 import NgtcpRV.RtbInflight
 import NgtcpRV.VarintValue
+import NgtcpRV.StreamShutdown
