@@ -176,3 +176,4 @@ import NgtcpRV.PacingRate
 import NgtcpRV.LossDetection
 import NgtcpRV.RingbufIndex
 import NgtcpRV.IdleTimeout
+import NgtcpRV.VarintLen
