@@ -47,6 +47,7 @@ import NgtcpRV.ConnSafety
 import NgtcpRV.ConnCryptoLevel
 import NgtcpRV.ConnVarintLen
 import NgtcpRV.PktNumDecode
+import NgtcpRV.BbrCwnd
 import NgtcpRV.StreamOffset
 import NgtcpRV.ConnEcn
 import NgtcpRV.ConnPtoBackoff
