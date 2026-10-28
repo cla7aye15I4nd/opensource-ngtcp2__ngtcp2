@@ -49,6 +49,7 @@ import NgtcpRV.ConnVarintLen
 import NgtcpRV.PktNumDecode
 import NgtcpRV.BbrCwnd
 import NgtcpRV.BbrBdp
+import NgtcpRV.BbrQuantBudget
 import NgtcpRV.StreamOffset
 import NgtcpRV.ConnEcn
 import NgtcpRV.ConnPtoBackoff
