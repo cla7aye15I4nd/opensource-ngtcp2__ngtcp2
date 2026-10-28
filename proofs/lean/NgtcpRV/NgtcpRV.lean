@@ -54,6 +54,7 @@ import NgtcpRV.BbrWindowFilter
 import NgtcpRV.RateSample
 import NgtcpRV.PmtudProbe
 import NgtcpRV.BbrMinRtt
+import NgtcpRV.BbrLossBounds
 import NgtcpRV.StreamOffset
 import NgtcpRV.ConnEcn
 import NgtcpRV.ConnPtoBackoff
