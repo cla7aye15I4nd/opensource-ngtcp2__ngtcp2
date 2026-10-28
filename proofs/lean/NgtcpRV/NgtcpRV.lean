@@ -66,6 +66,7 @@ import NgtcpRV.PathEq
 import NgtcpRV.ObjectPool
 import NgtcpRV.SockaddrEq
 import NgtcpRV.ConnDispatch
+import NgtcpRV.ConnDispatchState
 import NgtcpRV.StreamOffset
 import NgtcpRV.ConnEcn
 import NgtcpRV.ConnPtoBackoff
