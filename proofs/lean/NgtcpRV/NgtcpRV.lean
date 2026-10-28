@@ -169,3 +169,4 @@ import NgtcpRV.CongestionWindow
 import NgtcpRV.RttSample
 import NgtcpRV.PtoCompute
 import NgtcpRV.EcnValidation
+import NgtcpRV.ScidPool
