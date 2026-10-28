@@ -159,3 +159,4 @@ import NgtcpRV.TxPktNumSM
 import NgtcpRV.StreamRxFlow
 import NgtcpRV.TxFlow
 import NgtcpRV.FinalSizeSM
+import NgtcpRV.StreamIdLimit
